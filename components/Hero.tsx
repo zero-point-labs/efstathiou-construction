@@ -63,7 +63,7 @@ export default function Hero() {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-4 justify-center items-center pt-4 md:pt-6">
+          <div className="flex flex-col gap-4 justify-center items-center pt-4 md:pt-6 pb-16 md:pb-8">
             <button className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 w-full max-w-[250px] md:min-w-[200px] md:w-auto">
               <span className="relative z-10">VIEW OUR WORK</span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
@@ -78,10 +78,10 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-30">
         <div className="flex flex-col items-center text-white/70">
           <span className="text-xs font-light tracking-wider mb-2">SCROLL</span>
-          <div className="w-px h-6 bg-white/30 animate-pulse"></div>
+          <div className="w-px h-4 md:h-6 bg-white/30 animate-pulse"></div>
         </div>
       </div>
 
