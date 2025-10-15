@@ -43,32 +43,33 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/55 z-10"></div>
 
       {/* Main Content Container */}
-      <div className="relative h-full flex flex-col items-center justify-center z-20 px-4">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="relative h-full flex flex-col items-center justify-center z-20 px-4 pt-20 md:pt-0">
+        <div className="text-center max-w-4xl mx-auto space-y-4 md:space-y-6">
           
           {/* Secondary Subtitle */}
-          <p className="text-sm sm:text-base md:text-lg text-white/80 font-light tracking-wider mb-4 uppercase">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/80 font-light tracking-wider uppercase">
             Premium Quality Solutions
           </p>
           
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white leading-none tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em] mb-6 md:mb-8">
-            <span className="font-light">EFSTATHIOU</span> <span className="font-bold">CONSTRUCTIONS</span>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight md:leading-none tracking-wide md:tracking-[0.05em] lg:tracking-[0.08em]">
+            <span className="font-light block sm:inline">EFSTATHIOU</span>
+            <span className="font-bold block sm:inline"> CONSTRUCTIONS</span>
           </h1>
           
           {/* Tagline */}
-          <p className="text-base sm:text-lg md:text-xl text-white/90 font-light leading-relaxed mb-8 md:mb-12 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 font-light leading-relaxed max-w-xl md:max-w-2xl mx-auto px-2">
             Where architectural vision meets construction excellence.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 min-w-[200px]">
+          <div className="flex flex-col gap-4 justify-center items-center pt-4 md:pt-6">
+            <button className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 w-full max-w-[250px] md:min-w-[200px] md:w-auto">
               <span className="relative z-10">VIEW OUR WORK</span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>
             
-            <button className="text-white text-sm font-medium tracking-wider border-b border-white/50 pb-1 hover:border-white transition-colors duration-300">
+            <button className="text-white text-xs md:text-sm font-medium tracking-wider border-b border-white/50 pb-1 hover:border-white transition-colors duration-300">
               VIEW SERVICES
             </button>
           </div>

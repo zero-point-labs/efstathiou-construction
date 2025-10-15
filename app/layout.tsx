@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata: Metadata = {
   title: 'Nicolas Efstathiou Realty - Premium Real Estate Services',
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <SmoothScroll />
         {children}
       </body>
     </html>
