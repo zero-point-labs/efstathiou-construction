@@ -343,7 +343,7 @@ export default function AboutSection() {
             
             {/* Floating badge */}
             <motion.div 
-              className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border border-gray-100"
+              className="hidden sm:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border border-gray-100"
               variants={badgeVariants}
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ duration: 0.2 }}
