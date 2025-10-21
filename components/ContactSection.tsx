@@ -203,7 +203,7 @@ export default function ContactSection() {
         animate={isInView ? "visible" : "hidden"}
       >
         <motion.div 
-          className="absolute top-20 left-10 w-72 h-72 bg-gray-200/30 rounded-full blur-3xl"
+          className="hidden md:block absolute top-20 left-10 w-72 h-72 bg-gray-200/30 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3]
@@ -215,7 +215,7 @@ export default function ContactSection() {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl"
+          className="hidden md:block absolute bottom-20 right-10 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.4, 0.2]

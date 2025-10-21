@@ -145,7 +145,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section ref={ref} className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section ref={ref} className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
