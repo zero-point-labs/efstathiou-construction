@@ -1,7 +1,8 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import ArchitectureSection from '@/components/ArchitectureSection'
-import ExcellenceInMotion from '@/components/ExcellenceInMotion'
+import AboutSection from '@/components/AboutSection'
+import NewServicesSection from '@/components/NewServicesSection'
+import OurWorkSection from '@/components/OurWorkSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
@@ -10,8 +11,9 @@ export default function Home() {
     <main className="min-h-screen">
       <Header isDark={true} />
       <Hero />
-      <ArchitectureSection />
-      <ExcellenceInMotion />
+      <AboutSection />
+      <OurWorkSection />
+      <NewServicesSection />
       <ContactSection />
       <Footer />
     </main>

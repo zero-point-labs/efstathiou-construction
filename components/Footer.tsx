@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-16">
@@ -29,11 +31,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-medium mb-6 tracking-wide">QUICK LINKS</h3>
             <ul className="space-y-3">
-              <li><a href="#home" className="text-gray-300 hover:text-white transition-colors font-light">Home</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors font-light">About</a></li>
-              <li><a href="#properties" className="text-gray-300 hover:text-white transition-colors font-light">Properties</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors font-light">Services</a></li>
-              <li><a href="#gallery" className="text-gray-300 hover:text-white transition-colors font-light">Gallery</a></li>
+              <li><Link href="/" className="text-gray-300 hover:text-white transition-colors font-light">Home</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors font-light">About</Link></li>
+              <li><Link href="/work" className="text-gray-300 hover:text-white transition-colors font-light">Our Work</Link></li>
+              <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors font-light">Services</Link></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors font-light">Contact</a></li>
             </ul>
           </div>
 

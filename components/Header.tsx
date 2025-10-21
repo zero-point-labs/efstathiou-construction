@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 interface HeaderProps {
   isDark?: boolean
@@ -11,6 +13,7 @@ interface HeaderProps {
 export default function Header({ isDark = false }: HeaderProps) {
   const [scrollY, setScrollY] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +40,21 @@ export default function Header({ isDark = false }: HeaderProps) {
 
   // Determine if we should use dark theme based on scroll position and isDark prop
   const shouldUseDarkTheme = isDark || scrollY < 100
+
+  // Function to check if a route is active
+  const isActiveRoute = (route: string) => {
+    if (route === '/' && pathname === '/') return true
+    if (route !== '/' && pathname.startsWith(route)) return true
+    return false
+  }
+
+  // Function to scroll to contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <motion.nav 
@@ -72,50 +90,66 @@ export default function Header({ isDark = false }: HeaderProps) {
         <div className={`hidden md:flex space-x-8 lg:space-x-12 text-sm lg:text-base font-medium ${
           shouldUseDarkTheme && scrollY < 100 ? 'text-white' : 'text-gray-900'
         }`}>
-          <motion.a 
-            href="#home" 
-            className={`relative hover:opacity-70 transition-all tracking-wide pb-1 ${
-              shouldUseDarkTheme && scrollY < 100 
-                ? 'border-b-2 border-white' 
-                : 'border-b-2 border-gray-900'
-            }`}
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.2 }}
-          >
-            HOME
-          </motion.a>
-          <motion.a 
-            href="#about" 
-            className="relative hover:opacity-70 transition-all tracking-wide pb-1 hover:border-b-2 hover:border-current"
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.2 }}
-          >
-            ABOUT
-          </motion.a>
-          <motion.a 
-            href="#properties" 
-            className="relative hover:opacity-70 transition-all tracking-wide pb-1 hover:border-b-2 hover:border-current"
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.2 }}
-          >
-            PROPERTIES
-          </motion.a>
-          <motion.a 
-            href="#services" 
-            className="relative hover:opacity-70 transition-all tracking-wide pb-1 hover:border-b-2 hover:border-current"
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.2 }}
-          >
-            SERVICES
-          </motion.a>
-          <motion.a 
-            href="#gallery" 
-            className="relative hover:opacity-70 transition-all tracking-wide pb-1 hover:border-b-2 hover:border-current"
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.2 }}
-          >
-            GALLERY
-          </motion.a>
+          <Link href="/">
+            <motion.a 
+              className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
+                isActiveRoute('/') 
+                  ? (shouldUseDarkTheme && scrollY < 100 
+                      ? 'border-b-2 border-white' 
+                      : 'border-b-2 border-gray-900')
+                  : 'hover:border-b-2 hover:border-current'
+              }`}
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              HOME
+            </motion.a>
+          </Link>
+          <Link href="/about">
+            <motion.a 
+              className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
+                isActiveRoute('/about') 
+                  ? (shouldUseDarkTheme && scrollY < 100 
+                      ? 'border-b-2 border-white' 
+                      : 'border-b-2 border-gray-900')
+                  : 'hover:border-b-2 hover:border-current'
+              }`}
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              ABOUT
+            </motion.a>
+          </Link>
+          <Link href="/work">
+            <motion.a 
+              className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
+                isActiveRoute('/work') 
+                  ? (shouldUseDarkTheme && scrollY < 100 
+                      ? 'border-b-2 border-white' 
+                      : 'border-b-2 border-gray-900')
+                  : 'hover:border-b-2 hover:border-current'
+              }`}
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              OUR WORK
+            </motion.a>
+          </Link>
+          <Link href="/services">
+            <motion.a 
+              className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
+                isActiveRoute('/services') 
+                  ? (shouldUseDarkTheme && scrollY < 100 
+                      ? 'border-b-2 border-white' 
+                      : 'border-b-2 border-gray-900')
+                  : 'hover:border-b-2 hover:border-current'
+              }`}
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              SERVICES
+            </motion.a>
+          </Link>
         </div>
         
         {/* Desktop Contact Button */}
@@ -128,6 +162,7 @@ export default function Header({ isDark = false }: HeaderProps) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}
+          onClick={scrollToContact}
         >
           CONTACT
         </motion.button>
@@ -170,54 +205,60 @@ export default function Header({ isDark = false }: HeaderProps) {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div className="flex flex-col space-y-1 p-4 overflow-hidden">
-          <motion.a 
-            href="#home" 
-            className="text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded"
-            onClick={() => setMobileMenuOpen(false)}
-            whileHover={{ x: 8 }}
-            transition={{ duration: 0.2 }}
-          >
-            HOME
-          </motion.a>
-          <motion.a 
-            href="#about" 
-            className="text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded"
-            onClick={() => setMobileMenuOpen(false)}
-            whileHover={{ x: 8 }}
-            transition={{ duration: 0.2 }}
-          >
-            ABOUT
-          </motion.a>
-          <motion.a 
-            href="#properties" 
-            className="text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded"
-            onClick={() => setMobileMenuOpen(false)}
-            whileHover={{ x: 8 }}
-            transition={{ duration: 0.2 }}
-          >
-            PROPERTIES
-          </motion.a>
-          <motion.a 
-            href="#services" 
-            className="text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded"
-            onClick={() => setMobileMenuOpen(false)}
-            whileHover={{ x: 8 }}
-            transition={{ duration: 0.2 }}
-          >
-            SERVICES
-          </motion.a>
-          <motion.a 
-            href="#gallery" 
-            className="text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded"
-            onClick={() => setMobileMenuOpen(false)}
-            whileHover={{ x: 8 }}
-            transition={{ duration: 0.2 }}
-          >
-            GALLERY
-          </motion.a>
+          <Link href="/">
+            <motion.a 
+              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
+                isActiveRoute('/') ? 'bg-gray-50 font-semibold' : ''
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+              whileHover={{ x: 8 }}
+              transition={{ duration: 0.2 }}
+            >
+              HOME
+            </motion.a>
+          </Link>
+          <Link href="/about">
+            <motion.a 
+              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
+                isActiveRoute('/about') ? 'bg-gray-50 font-semibold' : ''
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+              whileHover={{ x: 8 }}
+              transition={{ duration: 0.2 }}
+            >
+              ABOUT
+            </motion.a>
+          </Link>
+          <Link href="/work">
+            <motion.a 
+              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
+                isActiveRoute('/work') ? 'bg-gray-50 font-semibold' : ''
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+              whileHover={{ x: 8 }}
+              transition={{ duration: 0.2 }}
+            >
+              OUR WORK
+            </motion.a>
+          </Link>
+          <Link href="/services">
+            <motion.a 
+              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
+                isActiveRoute('/services') ? 'bg-gray-50 font-semibold' : ''
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+              whileHover={{ x: 8 }}
+              transition={{ duration: 0.2 }}
+            >
+              SERVICES
+            </motion.a>
+          </Link>
           <motion.button 
             className="text-gray-900 text-sm font-medium tracking-wider border border-gray-900/40 px-4 py-3 mt-4 hover:bg-gray-900 hover:text-white transition-all duration-300 rounded"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => {
+              setMobileMenuOpen(false)
+              scrollToContact()
+            }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
