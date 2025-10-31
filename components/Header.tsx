@@ -5,6 +5,9 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
+import { Home, Info, Briefcase, Wrench, ChevronRight } from 'lucide-react'
+import LanguageSwitcher from './LanguageSwitcher'
 
 interface HeaderProps {
   isDark?: boolean
@@ -14,14 +17,14 @@ export default function Header({ isDark = false }: HeaderProps) {
   const [scrollY, setScrollY] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const t = useTranslations('navigation')
+  
+  // Extract locale from pathname
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
-      // Close mobile menu when scrolling
-      if (mobileMenuOpen) {
-        setMobileMenuOpen(false)
-      }
     }
 
     const handleResize = () => {
@@ -30,11 +33,19 @@ export default function Header({ isDark = false }: HeaderProps) {
       }
     }
 
+    // Prevent body scroll when mobile menu is open
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
+      document.body.style.overflow = ''
     }
   }, [mobileMenuOpen])
 
@@ -57,6 +68,7 @@ export default function Header({ isDark = false }: HeaderProps) {
   }
 
   return (
+    <>
     <motion.nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrollY > 100 
@@ -87,10 +99,10 @@ export default function Header({ isDark = false }: HeaderProps) {
         </motion.div>
         
         {/* Desktop Navigation */}
-        <div className={`hidden md:flex space-x-8 lg:space-x-12 text-sm lg:text-base font-medium ${
+        <div className={`hidden md:flex space-x-8 lg:space-x-12 text-sm lg:text-base font-medium greek-text ${
           shouldUseDarkTheme && scrollY < 100 ? 'text-white' : 'text-gray-900'
         }`}>
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <motion.a 
               className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
                 isActiveRoute('/') 
@@ -102,10 +114,10 @@ export default function Header({ isDark = false }: HeaderProps) {
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
             >
-              HOME
+              {t('home')}
             </motion.a>
           </Link>
-          <Link href="/about">
+          <Link href={`/${locale}/about`}>
             <motion.a 
               className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
                 isActiveRoute('/about') 
@@ -117,10 +129,10 @@ export default function Header({ isDark = false }: HeaderProps) {
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
             >
-              ABOUT
+              {t('about')}
             </motion.a>
           </Link>
-          <Link href="/work">
+          <Link href={`/${locale}/work`}>
             <motion.a 
               className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
                 isActiveRoute('/work') 
@@ -132,10 +144,10 @@ export default function Header({ isDark = false }: HeaderProps) {
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
             >
-              OUR WORK
+              {t('work')}
             </motion.a>
           </Link>
-          <Link href="/services">
+          <Link href={`/${locale}/services`}>
             <motion.a 
               className={`relative hover:opacity-70 transition-all tracking-wide pb-1 cursor-pointer ${
                 isActiveRoute('/services') 
@@ -147,9 +159,14 @@ export default function Header({ isDark = false }: HeaderProps) {
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
             >
-              SERVICES
+              {t('services')}
             </motion.a>
           </Link>
+        </div>
+        
+        {/* Desktop Language Switcher */}
+        <div className="hidden md:flex items-center">
+          <LanguageSwitcher isDark={shouldUseDarkTheme && scrollY < 100} />
         </div>
         
         {/* Desktop Contact Button */}
@@ -164,12 +181,12 @@ export default function Header({ isDark = false }: HeaderProps) {
           transition={{ duration: 0.2 }}
           onClick={scrollToContact}
         >
-          CONTACT
+          {t('contact')}
         </motion.button>
 
         {/* Mobile Menu Button */}
         <motion.button 
-          className={`md:hidden p-2 ${
+          className={`md:hidden relative z-50 p-2 ${
             shouldUseDarkTheme && scrollY < 100 ? 'text-white' : 'text-gray-900'
           }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -177,96 +194,211 @@ export default function Header({ isDark = false }: HeaderProps) {
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.1 }}
         >
-          <motion.svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-            animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {mobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </motion.svg>
+          <div className="relative w-6 h-5">
+            <motion.span
+              className="absolute left-0 top-0 h-0.5 w-full bg-current rounded-full"
+              animate={{
+                rotate: mobileMenuOpen ? 45 : 0,
+                y: mobileMenuOpen ? 10 : 0,
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            />
+            <motion.span
+              className="absolute left-0 top-1/2 h-0.5 w-full bg-current rounded-full -translate-y-1/2"
+              animate={{
+                opacity: mobileMenuOpen ? 0 : 1,
+                x: mobileMenuOpen ? -20 : 0,
+              }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              className="absolute left-0 bottom-0 h-0.5 w-full bg-current rounded-full"
+              animate={{
+                rotate: mobileMenuOpen ? -45 : 0,
+                y: mobileMenuOpen ? -10 : 0,
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            />
+          </div>
         </motion.button>
       </div>
-
-      {/* Mobile Menu */}
-      <motion.div
-        className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200"
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ 
-          opacity: mobileMenuOpen ? 1 : 0, 
-          height: mobileMenuOpen ? "auto" : 0 
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      >
-        <div className="flex flex-col space-y-1 p-4 overflow-hidden">
-          <Link href="/">
-            <motion.a 
-              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
-                isActiveRoute('/') ? 'bg-gray-50 font-semibold' : ''
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-              whileHover={{ x: 8 }}
-              transition={{ duration: 0.2 }}
-            >
-              HOME
-            </motion.a>
-          </Link>
-          <Link href="/about">
-            <motion.a 
-              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
-                isActiveRoute('/about') ? 'bg-gray-50 font-semibold' : ''
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-              whileHover={{ x: 8 }}
-              transition={{ duration: 0.2 }}
-            >
-              ABOUT
-            </motion.a>
-          </Link>
-          <Link href="/work">
-            <motion.a 
-              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
-                isActiveRoute('/work') ? 'bg-gray-50 font-semibold' : ''
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-              whileHover={{ x: 8 }}
-              transition={{ duration: 0.2 }}
-            >
-              OUR WORK
-            </motion.a>
-          </Link>
-          <Link href="/services">
-            <motion.a 
-              className={`text-gray-900 font-medium tracking-wide py-3 px-2 border-b border-gray-100 hover:opacity-70 transition-all hover:bg-gray-50 rounded cursor-pointer ${
-                isActiveRoute('/services') ? 'bg-gray-50 font-semibold' : ''
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-              whileHover={{ x: 8 }}
-              transition={{ duration: 0.2 }}
-            >
-              SERVICES
-            </motion.a>
-          </Link>
-          <motion.button 
-            className="text-gray-900 text-sm font-medium tracking-wider border border-gray-900/40 px-4 py-3 mt-4 hover:bg-gray-900 hover:text-white transition-all duration-300 rounded"
-            onClick={() => {
-              setMobileMenuOpen(false)
-              scrollToContact()
-            }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
-            CONTACT
-          </motion.button>
-        </div>
-      </motion.div>
     </motion.nav>
+
+      {/* Mobile Menu Overlay - Outside nav for proper positioning */}
+      <motion.div
+        className="md:hidden fixed inset-0 z-[60]"
+        initial={false}
+        animate={{ 
+          pointerEvents: mobileMenuOpen ? 'auto' : 'none'
+        }}
+        style={{ 
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0
+        }}
+      >
+        {/* Backdrop */}
+        <motion.div
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: mobileMenuOpen ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        {/* Menu Panel */}
+        <motion.div
+          className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white shadow-2xl"
+          initial={{ x: '100%' }}
+          animate={{ x: mobileMenuOpen ? 0 : '100%' }}
+          transition={{ 
+            type: "spring",
+            damping: 25,
+            stiffness: 200
+          }}
+        >
+          <div className="flex flex-col h-full">
+            {/* Menu Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00343d] to-[#004d5a] flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">NE</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Menu</p>
+                  <p className="text-xs text-gray-500">Navigation</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Menu Items */}
+            <div className="flex-1 overflow-y-auto py-6 px-4">
+              <nav className="flex flex-col space-y-2">
+                {[
+                  { href: `/${locale}`, label: t('home'), icon: Home },
+                  { href: `/${locale}/about`, label: t('about'), icon: Info },
+                  { href: `/${locale}/work`, label: t('work'), icon: Briefcase },
+                  { href: `/${locale}/services`, label: t('services'), icon: Wrench },
+                ].map((item, index) => {
+                  const IconComponent = item.icon
+                  const isActive = isActiveRoute(item.href.replace(`/${locale}`, '') || '/')
+                  return (
+                  <Link key={item.href} href={item.href}>
+                    <motion.div
+                      className={`group relative flex items-center gap-4 px-4 py-4 rounded-xl transition-all duration-300 cursor-pointer ${
+                        isActive
+                          ? 'bg-gradient-to-r from-[#00343d] to-[#004d5a] text-white shadow-lg'
+                          : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ 
+                        opacity: mobileMenuOpen ? 1 : 0,
+                        x: mobileMenuOpen ? 0 : 20
+                      }}
+                      transition={{ 
+                        delay: index * 0.1,
+                        duration: 0.3
+                      }}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {/* Icon */}
+                      <div className={`transition-transform duration-300 ${
+                        isActive ? 'text-white' : 'text-gray-600'
+                      }`}>
+                        <IconComponent 
+                          size={22} 
+                          className={isActive ? 'group-hover:scale-110' : 'group-hover:scale-110 group-hover:text-gray-900'} 
+                          strokeWidth={isActive ? 2.5 : 2}
+                        />
+                      </div>
+                      
+                      {/* Label */}
+                      <span className={`flex-1 font-medium tracking-wide text-base ${
+                        isActive ? 'text-white' : 'text-gray-900'
+                      }`}>
+                        {item.label}
+                      </span>
+
+                      {/* Arrow */}
+                      <motion.div
+                        className={`transition-colors duration-200 ${
+                          isActive
+                            ? 'text-white'
+                            : 'text-gray-400 group-hover:text-gray-600'
+                        }`}
+                        whileHover={{ x: 4 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronRight size={20} />
+                      </motion.div>
+
+                      {/* Active Indicator */}
+                      {isActive && (
+                        <motion.div
+                          className="absolute left-0 top-1/2 h-1 w-1 bg-white rounded-full -translate-y-1/2 -translate-x-1/2"
+                          layoutId="activeIndicator"
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        />
+                      )}
+                    </motion.div>
+                  </Link>
+                )})}
+              </nav>
+
+              {/* Language Switcher */}
+              <motion.div
+                className="mt-6 px-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ 
+                  opacity: mobileMenuOpen ? 1 : 0,
+                  y: mobileMenuOpen ? 0 : 20
+                }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                <div className="bg-gray-50 rounded-xl p-4">
+                  <p className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wider">Language</p>
+                  <LanguageSwitcher isDark={false} />
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Menu Footer */}
+            <motion.div
+              className="p-6 border-t border-gray-200 bg-gray-50"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: mobileMenuOpen ? 1 : 0,
+                y: mobileMenuOpen ? 0 : 20
+              }}
+              transition={{ delay: 0.5, duration: 0.3 }}
+            >
+              <motion.button
+                className="w-full bg-gradient-to-r from-[#00343d] to-[#004d5a] text-white font-medium tracking-wide py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  scrollToContact()
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="flex items-center justify-center gap-2">
+                  {t('contact')}
+                  <motion.div
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ChevronRight size={20} />
+                  </motion.div>
+                </span>
+              </motion.button>
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </>
   )
 }

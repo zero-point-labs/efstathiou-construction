@@ -4,10 +4,12 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 export default function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const t = useTranslations('contact')
 
   const [formData, setFormData] = useState({
     name: '',
@@ -152,31 +154,31 @@ export default function ContactSection() {
   }
 
   const projectTypes = [
-    'Luxury Villa',
-    'Commercial Space',
-    'Renovation',
-    'Custom Home',
-    'Development',
-    'Restoration',
-    'Other'
+    t('project_types.luxury_villa'),
+    t('project_types.commercial_space'),
+    t('project_types.renovation'),
+    t('project_types.custom_home'),
+    t('project_types.development'),
+    t('project_types.restoration'),
+    t('project_types.other')
   ]
 
   const budgetRanges = [
-    'Under €500K',
-    '€500K - €1M',
-    '€1M - €2M',
-    '€2M - €5M',
-    'Above €5M',
-    'Consultation Required'
+    t('budget_ranges.under_500k'),
+    t('budget_ranges.500k_1m'),
+    t('budget_ranges.1m_2m'),
+    t('budget_ranges.2m_5m'),
+    t('budget_ranges.above_5m'),
+    t('budget_ranges.consultation')
   ]
 
   const timelines = [
-    'Within 3 months',
-    '3-6 months',
-    '6-12 months',
-    '1-2 years',
-    'Planning phase',
-    'Flexible'
+    t('timelines.3_months'),
+    t('timelines.3_6_months'),
+    t('timelines.6_12_months'),
+    t('timelines.1_2_years'),
+    t('timelines.planning'),
+    t('timelines.flexible')
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -240,40 +242,20 @@ export default function ContactSection() {
         >
           <div className="overflow-hidden mb-8">
             <motion.h2 
-              className="text-6xl md:text-7xl lg:text-8xl font-light text-gray-900 tracking-wide"
+              className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-4 md:mb-6 greek-text"
               variants={titleVariants}
             >
-              <motion.span 
-                className="inline-block"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                START
-              </motion.span>
-              <motion.span 
-                className="inline-block mx-6"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                YOUR
-              </motion.span>
-              <motion.span 
-                className="inline-block"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                PROJECT
-              </motion.span>
+              {t('title').replace(t('title_bold'), '')} <span className="font-bold">{t('title_bold')}</span>
             </motion.h2>
           </div>
           <div className="overflow-hidden">
             <motion.p 
-              className="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light greek-text"
               variants={subtitleVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              Ready to bring your vision to life? Let&apos;s discuss your project and create something extraordinary together.
+              {t('subtitle')}
             </motion.p>
           </div>
         </motion.div>
@@ -300,7 +282,7 @@ export default function ContactSection() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <motion.div 
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center"
+                  className="w-12 h-12 bg-[#00343d] rounded-full flex items-center justify-center"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -309,13 +291,12 @@ export default function ContactSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h3 className="text-2xl font-light text-gray-900 tracking-wide">NICOLAS EFSTATHIOU</h3>
-                  <p className="text-lg text-gray-600 font-light">CONSTRUCTIONS LTD</p>
+                  <h3 className="text-2xl font-light text-gray-900 tracking-wide greek-text">{t('company_name_part1')}</h3>
+                  <p className="text-lg text-gray-600 font-light greek-text">{t('company_name_part2')}</p>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed font-light">
-                With over two decades of excellence in construction and architectural innovation, 
-                we transform visions into remarkable realities across Cyprus.
+              <p className="text-gray-600 leading-relaxed font-light greek-text">
+                {t('company_description')}
               </p>
             </motion.div>
 
@@ -332,7 +313,7 @@ export default function ContactSection() {
                 <motion.div 
                   className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600"
                   whileHover={{ 
-                    backgroundColor: "#111827",
+                    backgroundColor: "#00343d",
                     color: "#ffffff",
                     scale: 1.1,
                     rotate: 5
@@ -345,9 +326,9 @@ export default function ContactSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-1">Office Location</h4>
-                  <p className="text-gray-600 font-light">Nicosia, Cyprus</p>
-                  <p className="text-gray-500 text-sm font-light">Available for projects island-wide</p>
+                  <h4 className="text-lg font-medium text-gray-900 mb-1 greek-text">{t('office_location')}</h4>
+                  <p className="text-gray-600 font-light greek-text">{t('location')}</p>
+                  <p className="text-gray-500 text-sm font-light greek-text">{t('location_note')}</p>
                 </div>
               </motion.div>
 
@@ -361,7 +342,7 @@ export default function ContactSection() {
                 <motion.div 
                   className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600"
                   whileHover={{ 
-                    backgroundColor: "#111827",
+                    backgroundColor: "#00343d",
                     color: "#ffffff",
                     scale: 1.1,
                     rotate: 5
@@ -373,9 +354,9 @@ export default function ContactSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600 font-light">+357 XX XXX XXX</p>
-                  <p className="text-gray-500 text-sm font-light">Mon - Fri, 9:00 AM - 6:00 PM</p>
+                  <h4 className="text-lg font-medium text-gray-900 mb-1 greek-text">{t('phone')}</h4>
+                  <p className="text-gray-600 font-light greek-text">{t('phone_number')}</p>
+                  <p className="text-gray-500 text-sm font-light greek-text">{t('phone_hours')}</p>
                 </div>
               </motion.div>
 
@@ -389,7 +370,7 @@ export default function ContactSection() {
                 <motion.div 
                   className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600"
                   whileHover={{ 
-                    backgroundColor: "#111827",
+                    backgroundColor: "#00343d",
                     color: "#ffffff",
                     scale: 1.1,
                     rotate: 5
@@ -401,9 +382,9 @@ export default function ContactSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600 font-light">info@efstathiou-constructions.com</p>
-                  <p className="text-gray-500 text-sm font-light">We respond within 24 hours</p>
+                  <h4 className="text-lg font-medium text-gray-900 mb-1 greek-text">{t('email')}</h4>
+                  <p className="text-gray-600 font-light greek-text">{t('email_address')}</p>
+                  <p className="text-gray-500 text-sm font-light greek-text">{t('email_response')}</p>
                 </div>
               </motion.div>
 
@@ -422,8 +403,8 @@ export default function ContactSection() {
               className="mb-8"
               variants={itemVariants}
             >
-              <h3 className="text-3xl font-light text-gray-900 mb-3 tracking-wide">Get In Touch</h3>
-              <p className="text-gray-600 font-light">Tell us about your project and we&apos;ll get back to you with a detailed proposal.</p>
+              <h3 className="text-2xl font-light text-gray-900 mb-3 tracking-wide greek-text">{t('form_title')}</h3>
+              <p className="text-gray-600 font-light greek-text">{t('form_subtitle')}</p>
             </motion.div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -436,7 +417,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('full_name')} *</label>
                   <input
                     type="text"
                     name="name"
@@ -446,10 +427,10 @@ export default function ContactSection() {
                     onBlur={() => setFocusedField(null)}
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
                       focusedField === 'name' 
-                        ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
-                    placeholder="Your full name"
+                    placeholder={t('placeholders.full_name')}
                     required
                   />
                 </motion.div>
@@ -459,7 +440,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('email_address_field')} *</label>
                   <input
                     type="email"
                     name="email"
@@ -469,10 +450,10 @@ export default function ContactSection() {
                     onBlur={() => setFocusedField(null)}
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
                       focusedField === 'email' 
-                        ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
-                    placeholder="your@email.com"
+                    placeholder={t('placeholders.email')}
                     required
                   />
                 </motion.div>
@@ -486,7 +467,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('phone_number_field')}</label>
                   <input
                     type="tel"
                     name="phone"
@@ -496,10 +477,10 @@ export default function ContactSection() {
                     onBlur={() => setFocusedField(null)}
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
                       focusedField === 'phone' 
-                        ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
-                    placeholder="+357 XX XXX XXX"
+                    placeholder={t('placeholders.phone')}
                   />
                 </motion.div>
                 <motion.div 
@@ -508,7 +489,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Project Location</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_location')}</label>
                   <input
                     type="text"
                     name="location"
@@ -518,10 +499,10 @@ export default function ContactSection() {
                     onBlur={() => setFocusedField(null)}
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
                       focusedField === 'location' 
-                        ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
-                    placeholder="City, Cyprus"
+                    placeholder={t('placeholders.location')}
                   />
                 </motion.div>
               </div>
@@ -534,7 +515,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Project Type *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_type')} *</label>
                   <select
                     name="projectType"
                     value={formData.projectType}
@@ -543,13 +524,13 @@ export default function ContactSection() {
                     onBlur={() => setFocusedField(null)}
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 bg-white appearance-none cursor-pointer text-gray-900 ${
                       focusedField === 'projectType' 
-                        ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                     style={{ color: '#111827' }}
                     required
                   >
-                    <option value="" disabled style={{ color: '#9CA3AF' }}>Select project type</option>
+                    <option value="" disabled style={{ color: '#9CA3AF' }}>{t('placeholders.project_type')}</option>
                     {projectTypes.map((type) => (
                       <option key={type} value={type} style={{ color: '#111827', backgroundColor: '#ffffff' }}>{type}</option>
                     ))}
@@ -566,7 +547,7 @@ export default function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('budget_range')}</label>
                   <select
                     name="budget"
                     value={formData.budget}
@@ -575,12 +556,12 @@ export default function ContactSection() {
                     onBlur={() => setFocusedField(null)}
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 bg-white appearance-none cursor-pointer text-gray-900 ${
                       focusedField === 'budget' 
-                        ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                     style={{ color: '#111827' }}
                   >
-                    <option value="" disabled style={{ color: '#9CA3AF' }}>Select budget range</option>
+                    <option value="" disabled style={{ color: '#9CA3AF' }}>{t('placeholders.budget')}</option>
                     {budgetRanges.map((range) => (
                       <option key={range} value={range} style={{ color: '#111827', backgroundColor: '#ffffff' }}>{range}</option>
                     ))}
@@ -600,7 +581,7 @@ export default function ContactSection() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <label className="block text-sm font-medium text-gray-700 mb-2">Project Timeline</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_timeline')}</label>
                 <select
                   name="timeline"
                   value={formData.timeline}
@@ -609,12 +590,12 @@ export default function ContactSection() {
                   onBlur={() => setFocusedField(null)}
                   className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 bg-white appearance-none cursor-pointer text-gray-900 ${
                     focusedField === 'timeline' 
-                      ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                      ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                   style={{ color: '#111827' }}
                 >
-                  <option value="" disabled style={{ color: '#9CA3AF' }}>Select timeline</option>
+                  <option value="" disabled style={{ color: '#9CA3AF' }}>{t('placeholders.timeline')}</option>
                   {timelines.map((time) => (
                     <option key={time} value={time} style={{ color: '#111827', backgroundColor: '#ffffff' }}>{time}</option>
                   ))}
@@ -633,7 +614,7 @@ export default function ContactSection() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <label className="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_details')}</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -643,22 +624,22 @@ export default function ContactSection() {
                   rows={4}
                   className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 resize-none ${
                     focusedField === 'message' 
-                      ? 'border-gray-900 ring-2 ring-gray-900/10' 
+                      ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
-                  placeholder="Tell us about your vision, specific requirements, or any questions you have..."
+                  placeholder={t('placeholders.message')}
                 />
               </motion.div>
 
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                className="w-full bg-gray-900 text-white py-4 rounded-lg font-medium tracking-wider hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="w-full bg-[#00343d] text-white py-4 rounded-lg font-medium tracking-wider hover:bg-[#004d5a] transition-all duration-300 shadow-lg hover:shadow-xl greek-text"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                SEND MESSAGE
+                {t('send_message')}
               </motion.button>
 
             </form>

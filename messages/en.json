@@ -1,0 +1,845 @@
+{
+  "navigation": {
+    "home": "HOME",
+    "about": "ABOUT", 
+    "work": "OUR WORK",
+    "services": "SERVICES",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "subtitle": "Premium Quality Solutions",
+    "title_part1": "EFSTATHIOU",
+    "title_part2": "CONSTRUCTIONS",
+    "tagline": "Where architectural vision meets construction excellence.",
+    "cta": {
+      "consultation": "FREE CONSULTATION",
+      "services": "VIEW SERVICES"
+    },
+    "scroll": "scroll"
+  },
+  "about": {
+    "title": "About EFSTATHIOU",
+    "title_bold": "EFSTATHIOU",
+    "subtitle": "Two decades of architectural excellence and construction innovation across Cyprus",
+    "crafting_excellence": "Crafting Excellence Since 2003",
+    "description_mobile": "Founded by Nicolas Efstathiou, we specialize in transforming visions into exceptional realities through meticulous craftsmanship and contemporary design.",
+    "description_desktop": "Founded by Nicolas Efstathiou, our construction company stands at the forefront of architectural innovation in Cyprus. We specialize in transforming visions into exceptional realities through meticulous craftsmanship and contemporary design.",
+    "architectural_innovation": "Architectural Innovation",
+    "innovation_mobile": "Modern design principles with traditional craftsmanship for stunning spaces.",
+    "innovation_desktop": "We combine modern design principles with traditional craftsmanship to create spaces that are both functional and aesthetically stunning.",
+    "quality_assurance": "Quality Assurance",
+    "quality_mobile": "Rigorous quality control ensuring perfection in every detail.",
+    "quality_desktop": "Every project undergoes rigorous quality control processes, ensuring our clients receive nothing less than perfection in every detail.",
+    "client_partnership": "Client Partnership",
+    "partnership_description": "We believe in building long-term relationships with our clients, working closely with them throughout every phase of their project.",
+    "years_experience": "Years Experience",
+    "projects_completed": "Projects Completed",
+    "client_satisfaction": "Client Satisfaction",
+    "cta_text": "Ready to work with Cyprus's premier construction company?",
+    "learn_more": "Learn More About Us"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "About",
+      "title_bold": "EFSTATHIOU",
+      "subtitle": "Two decades of architectural excellence and construction innovation across Cyprus",
+      "scroll": "scroll"
+    },
+    "story": {
+      "title": "Our",
+      "title_bold": "Story",
+      "subtitle": "From humble beginnings to becoming Cyprus's premier construction company",
+      "founded_title": "Founded on Excellence",
+      "founded_description_1": "Founded by Nicolas Efstathiou in 2003, our construction company has been at the forefront of architectural innovation in Cyprus. What started as a small family business has grown into one of the most respected construction companies on the island.",
+      "founded_description_2": "Our journey began with a simple vision: to transform the construction industry in Cyprus by combining traditional craftsmanship with modern architectural techniques. Over the years, we have built a reputation for delivering exceptional quality and innovative design solutions.",
+      "architectural_innovation": "Architectural Innovation",
+      "innovation_description": "We blend contemporary design principles with traditional craftsmanship to create spaces that are both functional and aesthetically stunning.",
+      "quality_assurance": "Quality Assurance",
+      "quality_description": "Every project undergoes rigorous quality control processes, ensuring that our clients receive nothing short of perfection in every detail.",
+      "client_partnership": "Client Partnership",
+      "partnership_description": "We believe in building lasting relationships with our clients, working closely with them throughout every phase of their project."
+    },
+    "values": {
+      "title": "Our",
+      "title_bold": "Values",
+      "subtitle": "The principles that guide everything we do",
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for perfection in every project, from initial design to final completion, ensuring the highest standards of quality and craftsmanship."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We embrace cutting-edge technologies and innovative design solutions to create buildings that are both beautiful and functional."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "We conduct business with honesty, transparency, and ethical practices, building trust with our clients and partners."
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "We are committed to environmentally responsible construction practices and sustainable building solutions for a better future."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We work closely with our clients, architects, and partners to ensure every project meets and exceeds expectations."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "description": "We deliver projects on time and within budget, maintaining consistent quality and service throughout every phase."
+      }
+    },
+    "stats": {
+      "title": "By The",
+      "title_bold": "Numbers",
+      "subtitle": "Our achievements speak for themselves",
+      "years_experience": "Years Experience",
+      "projects_completed": "Projects Completed",
+      "client_satisfaction": "Client Satisfaction",
+      "team_members": "Team Members"
+    },
+    "cta": {
+      "title": "Ready to Work With Us?",
+      "subtitle": "Let's discuss your project and create something extraordinary together",
+      "button": "Start Your Project"
+    }
+  },
+  "work": {
+    "title": "Our",
+    "title_bold": "Work",
+    "subtitle": "Explore our portfolio of exceptional projects that showcase our commitment to architectural excellence",
+    "our_portfolio": "Our",
+    "our_portfolio_bold": "Portfolio",
+    "portfolio_subtitle": "A showcase of our completed projects across Cyprus, demonstrating our expertise and commitment to excellence",
+    "achievements": "Our",
+    "achievements_bold": "Achievements",
+    "achievements_subtitle": "Numbers that speak to our commitment to excellence and client satisfaction",
+    "ready_to_start": "Ready to Start Your Project?",
+    "ready_subtitle": "Let's discuss your vision and create something extraordinary together",
+    "start_project": "Start Your Project",
+    "projects_completed": "Projects Completed",
+    "years_experience": "Years Experience",
+    "client_satisfaction": "Client Satisfaction",
+    "team_members": "Team Members",
+    "featured_projects": {
+      "luxury_villa": {
+        "title": "LUXURY VILLA",
+        "subtitle": "Ultra-Modern Residential",
+        "description": "A stunning contemporary villa featuring floor-to-ceiling windows, premium finishes, and innovative architectural design that seamlessly blends indoor and outdoor living.",
+        "features": ["4 Bedrooms", "Premium Materials", "Smart Home Integration"],
+        "location": "Limassol, Cyprus",
+        "type": "Residential"
+      },
+      "commercial_complex": {
+        "title": "COMMERCIAL COMPLEX",
+        "subtitle": "Modern Business Architecture",
+        "description": "A sophisticated office building designed for modern business needs, featuring sleek lines, efficient layouts, and professional aesthetics that inspire productivity.",
+        "features": ["12 Floors", "Corporate Design", "Energy Efficient"],
+        "location": "Nicosia, Cyprus",
+        "type": "Commercial"
+      }
+    },
+    "luxury_villa": {
+      "title": "RESIDENTIAL PROPERTY RENEWAL",
+      "subtitle": "Specialized Maintenance & Aesthetic Enhancement",
+      "specifications": {
+        "area": "450 sqm",
+        "duration": "3 months",
+        "budget": "€150K"
+      },
+      "description": [
+        "Specialized maintenance and upgrade of a modern residence with focus on aesthetic improvement and preservation of architectural value. Careful exterior maintenance and contemporary enhancement that ensures long-term property value.",
+        "The scope of work encompassed detailed cleaning, repainting, and repair of exterior surfaces, along with upgrading the garden and landscape design. We also implemented modern outdoor lighting solutions and conducted thorough structural integrity checks to address any minor repairs. The goal was to blend contemporary design principles with practical maintenance, delivering a refreshed and sustainable living environment."
+      ],
+      "features": ["Exterior Maintenance", "Aesthetic Enhancement", "Garden Care"],
+      "location": "Limassol, Cyprus",
+      "type": "Residential"
+    },
+    "commercial_complex": {
+      "title": "MOUNTAIN RETREAT MITSERO",
+      "subtitle": "Quickly Built Mountain Home",
+      "specifications": {
+        "area": "100 sqm",
+        "duration": "2 months",
+        "budget": "€80K"
+      },
+      "description": "A practical and efficiently constructed mountain house in Mitsero, completed in just two months. This cozy retreat features a durable metal roof, spacious veranda, and a design that integrates seamlessly with its natural woodland surroundings.",
+      "features": ["Rapid Construction", "Mountain Location", "Functional Design", "Spacious Veranda", "Durable Metal Roof"],
+      "location": "Mitsero, Cyprus",
+      "type": "Residential"
+    },
+    "view_project": "View Project",
+    "cta_text": "Want to see more of our exceptional work?",
+    "view_portfolio": "View Full Portfolio",
+    "category_residential": "Residential",
+    "category_commercial": "Commercial",
+    "category_maintenance": "Maintenance",
+    "project_overview": "Project Overview",
+    "key_features": "Key Features",
+    "specifications": "Specifications",
+    "area": "Area",
+    "duration": "Duration",
+    "budget": "Budget",
+    "architect": "Architect",
+    "type_label": "Type",
+    "category_label": "Category",
+    "quick_links": "Quick Links",
+    "back_to_portfolio": "Back to Portfolio",
+    "inquire_about_project": "Inquire About This Project",
+    "project_gallery": "Project Gallery",
+    "project_overview_description": "Detailed insights into this exceptional project showcasing our expertise and attention to detail",
+    "challenges_and_solutions": "Challenges & Solutions",
+    "challenges": "Challenges",
+    "solutions": "Solutions",
+    "gallery_subtitle": "A visual journey through the project development and final result",
+    "start_discussion": "Let's discuss your vision and create something extraordinary together",
+    "start_project_button": "Start Your Project",
+    "view_more_projects": "View More Projects",
+    "testimonial_luxury_villa": "The maintenance work exceeded our expectations. The team was professional, punctual, and the results speak for themselves. Our property looks better than when we first bought it.",
+    "testimonial_commercial_complex": "We are thrilled with our mountain retreat! The team delivered exactly what we envisioned, and the speed of construction was truly impressive.",
+    "property_owners": "Property Owners",
+    "ready_to_start": "Ready to Start Your Project?",
+    "luxury_villa_challenges": [
+      "Maintaining property aesthetics during work",
+      "Coordinating with residents schedule",
+      "Weather-dependent exterior work",
+      "Preserving original architectural features"
+    ],
+    "luxury_villa_solutions": [
+      "Phased work approach to minimize disruption",
+      "Flexible scheduling around client needs",
+      "Weather monitoring and contingency planning",
+      "Expert craftsmen for heritage preservation"
+    ],
+    "commercial_complex_challenges": [
+      "Working with mountainous and challenging terrain",
+      "Adhering to a strict two-month timeline",
+      "Managing supply logistics with limited access",
+      "Integrating with the natural woodland environment"
+    ],
+    "commercial_complex_solutions": [
+      "Efficient pre-fabrication and modular construction techniques",
+      "Streamlined project management with dedicated on-site team",
+      "Use of robust, locally sourced materials suitable for mountain conditions",
+      "Design that respected and integrated with the natural environment"
+    ],
+    "custom_home_1": {
+      "specifications": {
+        "area": "380 sqm",
+        "duration": "16 months",
+        "budget": "€2.1M",
+        "architect": "Nicolas Efstathiou"
+      }
+    },
+    "apartment_complex": {
+      "specifications": {
+        "area": "3,200 sqm",
+        "duration": "22 months",
+        "budget": "€3.8M",
+        "architect": "Nicolas Efstathiou"
+      }
+    },
+    "renovation_1": {
+      "specifications": {
+        "area": "280 sqm",
+        "duration": "12 months",
+        "budget": "€850K",
+        "architect": "Nicolas Efstathiou"
+      }
+    },
+    "renovation_2": {
+      "specifications": {
+        "area": "1,200 sqm",
+        "duration": "20 months",
+        "budget": "€1.8M",
+        "architect": "Nicolas Efstathiou"
+      }
+    },
+    "projects_completed": "Projects Completed",
+    "years_experience": "Years Experience",
+    "client_satisfaction": "Client Satisfaction",
+    "team_members": "Team Members"
+  },
+  "services": {
+    "title": "Our Services",
+    "title_bold": "Services",
+    "subtitle": "Comprehensive construction and architectural solutions crafted with precision and excellence",
+    "construction": {
+      "title": "Construction",
+      "subtitle": "From Foundation to Finish",
+      "description": "We specialize in comprehensive construction services, building exceptional properties from the ground up. Our team handles everything from initial planning and permits to final construction and quality assurance.",
+      "features": [
+        "Custom Home Construction",
+        "Commercial Buildings", 
+        "Project Management",
+        "Quality Control",
+        "Timeline Management",
+        "Budget Optimization"
+      ]
+    },
+    "renovation": {
+      "title": "Renovation",
+      "subtitle": "Transform Your Space",
+      "description": "Breathe new life into existing properties with our comprehensive renovation services. We transform outdated spaces into modern, functional environments while preserving the character and charm of your property.",
+      "features": [
+        "Kitchen Renovations",
+        "Bathroom Remodeling",
+        "Interior Design",
+        "Structural Updates",
+        "Energy Efficiency",
+        "Modern Amenities"
+      ]
+    },
+    "expansion": {
+      "title": "Expansion",
+      "subtitle": "Grow Your Property",
+      "description": "Expand your living or working space with our expert expansion services. Whether adding new rooms, extending existing areas, or creating additional floors, we help you maximize your property's potential.",
+      "features": [
+        "Room Additions",
+        "Floor Extensions",
+        "Outdoor Living Spaces",
+        "Commercial Expansions",
+        "Structural Engineering",
+        "Permit Management"
+      ]
+    },
+    "restoration": {
+      "title": "Restoration",
+      "subtitle": "Preserve Heritage",
+      "description": "Restore historic properties to their former glory while integrating modern functionality. Our restoration experts combine traditional craftsmanship with contemporary techniques to preserve Cyprus's architectural heritage.",
+      "features": [
+        "Historic Preservation",
+        "Heritage Restoration",
+        "Traditional Craftsmanship",
+        "Modern Integration",
+        "Cultural Compliance",
+        "Authentic Materials"
+      ]
+    },
+    "cta_text": "Ready to bring your vision to life?",
+    "view_all_services": "View All Services",
+    "learn_more_about": "Learn More About"
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Our",
+      "title_bold": "Services",
+      "subtitle": "Comprehensive construction solutions tailored to your vision and needs",
+      "scroll": "scroll"
+    },
+    "what_we_do": {
+      "title": "What We",
+      "title_bold": "Do",
+      "subtitle": "From concept to completion, we deliver exceptional construction services across Cyprus"
+    },
+    "learn_more": "Learn More",
+    "process": {
+      "title": "Our",
+      "title_bold": "Process",
+      "subtitle": "A systematic approach to delivering exceptional results",
+      "steps": {
+        "consultation": {
+          "step": "01",
+          "title": "Consultation",
+          "description": "We begin with a detailed consultation to understand your vision, requirements, and budget."
+        },
+        "planning": {
+          "step": "02",
+          "title": "Planning",
+          "description": "Our team creates comprehensive plans, designs, and timelines tailored to your project."
+        },
+        "execution": {
+          "step": "03",
+          "title": "Execution",
+          "description": "We execute the project with precision, maintaining quality standards and timelines."
+        },
+        "delivery": {
+          "step": "04",
+          "title": "Delivery",
+          "description": "We deliver your completed project with final inspections and quality assurance."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "subtitle": "Let's discuss your vision and create something extraordinary together",
+      "button": "Get Started Today"
+    }
+  },
+  "constructionPage": {
+    "hero": {
+      "subtitle": "From Foundation to Finish",
+      "scroll": "scroll"
+    },
+    "overview": {
+      "title": "Complete",
+      "title_bold": "Construction",
+      "subtitle": "We specialize in comprehensive construction services, building exceptional properties from the ground up"
+    },
+    "building_excellence": {
+      "title": "Building Excellence Since 2003",
+      "description_1": "Our construction services encompass every aspect of building, from initial site preparation and foundation work to final finishes and quality assurance. We handle everything from custom homes to commercial buildings, ensuring each project meets the highest standards of quality and craftsmanship.",
+      "description_2": "With over two decades of experience in Cyprus construction, we understand the unique challenges and opportunities of building in this beautiful Mediterranean environment. Our team combines traditional building techniques with modern construction methods to create structures that are both beautiful and durable."
+    },
+    "features": {
+      "project_management": {
+        "title": "Project Management",
+        "description": "Comprehensive project management from conception to completion, ensuring timelines and budgets are maintained."
+      },
+      "quality_control": {
+        "title": "Quality Control",
+        "description": "Rigorous quality control processes at every stage of construction to ensure exceptional results."
+      },
+      "timeline_management": {
+        "title": "Timeline Management",
+        "description": "Efficient scheduling and timeline management to deliver your project on time and within budget."
+      }
+    },
+    "what_we_build": {
+      "title": "What We",
+      "title_bold": "Build",
+      "subtitle": "Comprehensive construction solutions for residential and commercial projects",
+      "services": {
+        "custom_homes": {
+          "title": "Custom Homes",
+          "description": "Distinctive ultra-modern custom homes designed to reflect your unique vision and lifestyle.",
+          "features": ["Personalized Design", "Modern Architecture", "Premium Materials"]
+        },
+        "luxury_residential": {
+          "title": "Luxury Residential",
+          "description": "Ultra-modern luxury houses with selective lighting and sophisticated architectural elements.",
+          "features": ["High-End Finishes", "Smart Home Integration", "Exclusive Design"]
+        },
+        "commercial_buildings": {
+          "title": "Commercial Buildings",
+          "description": "Sleek office buildings and commercial spaces designed for modern business needs.",
+          "features": ["Corporate Design", "Efficient Layouts", "Professional Aesthetics"]
+        },
+        "apartment_complexes": {
+          "title": "Apartment Complexes",
+          "description": "Modern residential apartment complexes that combine comfort with contemporary design.",
+          "features": ["Multi-Unit Design", "Community Spaces", "Modern Amenities"]
+        },
+        "industrial_facilities": {
+          "title": "Industrial Facilities",
+          "description": "Robust industrial and manufacturing facilities built to meet specific operational requirements.",
+          "features": ["Heavy-Duty Construction", "Specialized Equipment", "Compliance Standards"]
+        },
+        "mixed_use": {
+          "title": "Mixed-Use Developments",
+          "description": "Innovative mixed-use developments combining residential, commercial, and retail spaces.",
+          "features": ["Integrated Design", "Community Focus", "Sustainable Planning"]
+        }
+      }
+    },
+    "process": {
+      "title": "Our",
+      "title_bold": "Process",
+      "subtitle": "A systematic approach to delivering exceptional construction results",
+      "steps": {
+        "planning": {
+          "step": "01",
+          "title": "Planning & Design",
+          "description": "Site analysis, architectural design, and comprehensive planning for your construction project."
+        },
+        "permits": {
+          "step": "02",
+          "title": "Permits & Approvals",
+          "description": "Handling all necessary permits, approvals, and regulatory compliance requirements."
+        },
+        "foundation": {
+          "step": "03",
+          "title": "Foundation & Structure",
+          "description": "Site preparation, foundation work, and structural construction with quality materials."
+        },
+        "finishing": {
+          "step": "04",
+          "title": "Finishing & Handover",
+          "description": "Final finishes, quality inspections, and project handover with warranty coverage."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Build Your Dream?",
+      "subtitle": "Let's discuss your construction project and bring your vision to life",
+      "button": "Start Your Construction Project"
+    }
+  },
+  "renovationPage": {
+    "hero": {
+      "subtitle": "Transform Your Space - Breathe New Life Into Existing Properties",
+      "scroll": "scroll"
+    },
+    "overview": {
+      "title": "Complete",
+      "title_bold": "Renovation",
+      "subtitle": "Breathe new life into existing properties with our comprehensive renovation services"
+    },
+    "transform": {
+      "title": "Transform Your Space",
+      "description_1": "Our renovation services transform outdated spaces into modern, functional environments while preserving the character and charm of your property. We specialize in complete makeovers that enhance both aesthetics and functionality.",
+      "description_2": "Whether you're looking to modernize a kitchen, transform a bathroom, or completely renovate your entire home, our experienced team combines creative design solutions with expert craftsmanship to deliver exceptional results that exceed your expectations."
+    },
+    "features": {
+      "space_optimization": {
+        "title": "Space Optimization",
+        "description": "Intelligent space planning to maximize functionality and create more usable living areas."
+      },
+      "modern_design": {
+        "title": "Modern Design",
+        "description": "Contemporary design solutions that blend seamlessly with your existing architecture."
+      },
+      "energy_efficiency": {
+        "title": "Energy Efficiency",
+        "description": "Modern energy-efficient solutions to reduce costs and improve environmental sustainability."
+      }
+    },
+    "specialties": {
+      "title": "Renovation",
+      "title_bold": "Specialties",
+      "subtitle": "Comprehensive renovation solutions for every area of your property",
+      "services": {
+        "kitchen": {
+          "title": "Kitchen Renovations",
+          "description": "Complete kitchen makeovers with modern appliances, custom cabinetry, and contemporary finishes.",
+          "features": ["Custom Cabinetry", "Modern Appliances", "Premium Countertops"]
+        },
+        "bathroom": {
+          "title": "Bathroom Remodeling",
+          "description": "Luxurious bathroom transformations with spa-like features and modern fixtures.",
+          "features": ["Spa Features", "Modern Fixtures", "Waterproof Materials"]
+        },
+        "interior_design": {
+          "title": "Interior Design",
+          "description": "Comprehensive interior design services to create cohesive and beautiful living spaces.",
+          "features": ["Space Planning", "Color Schemes", "Furniture Selection"]
+        },
+        "structural": {
+          "title": "Structural Updates",
+          "description": "Structural modifications to improve layout, add space, or enhance functionality.",
+          "features": ["Load-Bearing Walls", "Room Additions", "Structural Integrity"]
+        },
+        "flooring": {
+          "title": "Flooring & Finishes",
+          "description": "Premium flooring solutions and interior finishes to complete your renovation.",
+          "features": ["Hardwood Floors", "Tile Work", "Paint & Finishes"]
+        },
+        "smart_home": {
+          "title": "Smart Home Integration",
+          "description": "Modern smart home technology integration for enhanced convenience and efficiency.",
+          "features": ["Home Automation", "Energy Management", "Security Systems"]
+        }
+      }
+    },
+    "process": {
+      "title": "Renovation",
+      "title_bold": "Process",
+      "subtitle": "A systematic approach to transforming your space",
+      "steps": {
+        "assessment": {
+          "step": "01",
+          "title": "Assessment & Planning",
+          "description": "Detailed assessment of existing conditions and comprehensive renovation planning."
+        },
+        "design": {
+          "step": "02",
+          "title": "Design & Permits",
+          "description": "Custom design development and handling all necessary permits and approvals."
+        },
+        "demolition": {
+          "step": "03",
+          "title": "Demolition & Prep",
+          "description": "Careful demolition and site preparation for the renovation work."
+        },
+        "construction": {
+          "step": "04",
+          "title": "Construction & Finishing",
+          "description": "Renovation construction, installation, and final finishing touches."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Space?",
+      "subtitle": "Let's discuss your renovation project and create your dream space",
+      "button": "Start Your Renovation"
+    }
+  },
+  "expansionPage": {
+    "hero": {
+      "subtitle": "Grow Your Property - Expand Your Living or Working Space",
+      "scroll": "scroll"
+    },
+    "overview": {
+      "title": "Property",
+      "title_bold": "Expansion",
+      "subtitle": "Expand your living or working space with our expert expansion services"
+    },
+    "maximize": {
+      "title": "Maximize Your Property's Potential",
+      "description_1": "Our expansion services help you maximize your property's potential by adding new rooms, extending existing areas, or creating additional floors. Whether you need more living space, additional bedrooms, or expanded commercial facilities, we have the expertise to make it happen.",
+      "description_2": "We work closely with structural engineers and architects to ensure that every expansion project is not only beautiful but also structurally sound and compliant with all building codes and regulations. Our team handles everything from initial planning to final construction."
+    },
+    "features": {
+      "structural_engineering": {
+        "title": "Structural Engineering",
+        "description": "Expert structural engineering to ensure safe and stable expansion projects."
+      },
+      "permit_management": {
+        "title": "Permit Management",
+        "description": "Comprehensive permit management and regulatory compliance for all expansion projects."
+      },
+      "seamless_integration": {
+        "title": "Seamless Integration",
+        "description": "Seamless integration of new spaces with existing architecture and design."
+      }
+    },
+    "solutions": {
+      "title": "Expansion",
+      "title_bold": "Solutions",
+      "subtitle": "Comprehensive expansion solutions for residential and commercial properties",
+      "services": {
+        "room_additions": {
+          "title": "Room Additions",
+          "description": "Add new rooms to your existing property, including bedrooms, living spaces, and home offices.",
+          "features": ["Bedroom Additions", "Living Space Extensions", "Home Office Spaces"]
+        },
+        "floor_extensions": {
+          "title": "Floor Extensions",
+          "description": "Add additional floors to your property for increased living or working space.",
+          "features": ["Second Floor Additions", "Third Floor Extensions", "Structural Support"]
+        },
+        "outdoor_living": {
+          "title": "Outdoor Living Spaces",
+          "description": "Expand your living area with covered patios, outdoor kitchens, and entertainment areas.",
+          "features": ["Covered Patios", "Outdoor Kitchens", "Entertainment Areas"]
+        },
+        "commercial_expansions": {
+          "title": "Commercial Expansions",
+          "description": "Expand commercial properties with additional office space, retail areas, or storage facilities.",
+          "features": ["Office Expansions", "Retail Space", "Storage Facilities"]
+        },
+        "garage_additions": {
+          "title": "Garage Additions",
+          "description": "Add or expand garage space for additional vehicle storage and workshop areas.",
+          "features": ["Multi-Car Garages", "Workshop Spaces", "Storage Solutions"]
+        },
+        "basement_expansions": {
+          "title": "Basement Expansions",
+          "description": "Expand or finish basement areas to create additional living or storage space.",
+          "features": ["Finished Basements", "Storage Areas", "Utility Spaces"]
+        }
+      }
+    },
+    "process": {
+      "title": "Expansion",
+      "title_bold": "Process",
+      "subtitle": "A systematic approach to expanding your property",
+      "steps": {
+        "site_analysis": {
+          "step": "01",
+          "title": "Site Analysis",
+          "description": "Comprehensive site analysis and feasibility study for your expansion project."
+        },
+        "design_engineering": {
+          "step": "02",
+          "title": "Design & Engineering",
+          "description": "Custom design development and structural engineering for safe expansion."
+        },
+        "permits": {
+          "step": "03",
+          "title": "Permits & Approvals",
+          "description": "Handling all necessary permits, approvals, and regulatory compliance."
+        },
+        "construction": {
+          "step": "04",
+          "title": "Construction & Integration",
+          "description": "Professional construction and seamless integration with existing structure."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Expand Your Space?",
+      "subtitle": "Let's discuss your expansion project and maximize your property's potential",
+      "button": "Start Your Expansion"
+    }
+  },
+  "restorationPage": {
+    "hero": {
+      "subtitle": "Preserve Heritage - Restore Historic Properties to Their Former Glory",
+      "scroll": "scroll"
+    },
+    "overview": {
+      "title": "Historic",
+      "title_bold": "Restoration",
+      "subtitle": "Restore historic properties to their former glory while integrating modern functionality"
+    },
+    "preserving": {
+      "title": "Preserving Cyprus Heritage",
+      "description_1": "Our restoration services combine traditional craftsmanship with contemporary techniques to preserve Cyprus's rich architectural heritage. We specialize in restoring historic properties while integrating modern functionality and comfort.",
+      "description_2": "From traditional stone houses to historic commercial buildings, our restoration experts understand the delicate balance between preserving historical authenticity and meeting modern living standards. We work closely with heritage organizations and use authentic materials and techniques."
+    },
+    "features": {
+      "heritage_preservation": {
+        "title": "Heritage Preservation",
+        "description": "Careful preservation of historical features and architectural elements that define the property's character."
+      },
+      "traditional_craftsmanship": {
+        "title": "Traditional Craftsmanship",
+        "description": "Skilled craftsmen using traditional techniques and authentic materials for authentic restoration."
+      },
+      "modern_integration": {
+        "title": "Modern Integration",
+        "description": "Seamless integration of modern amenities and systems while preserving historical integrity."
+      }
+    },
+    "specialties": {
+      "title": "Restoration",
+      "title_bold": "Specialties",
+      "subtitle": "Comprehensive restoration solutions for historic properties",
+      "services": {
+        "historic_preservation": {
+          "title": "Historic Preservation",
+          "description": "Careful preservation of historic buildings while maintaining their original character and significance.",
+          "features": ["Period Accuracy", "Heritage Compliance", "Cultural Significance"]
+        },
+        "stone_restoration": {
+          "title": "Stone Restoration",
+          "description": "Expert restoration of traditional stone masonry and architectural stonework.",
+          "features": ["Stone Masonry", "Architectural Details", "Weather Protection"]
+        },
+        "wood_restoration": {
+          "title": "Wood Restoration",
+          "description": "Restoration of historic wooden elements including beams, doors, and decorative features.",
+          "features": ["Wooden Beams", "Historic Doors", "Decorative Elements"]
+        },
+        "roof_restoration": {
+          "title": "Roof Restoration",
+          "description": "Restoration of traditional roofing systems using authentic materials and techniques.",
+          "features": ["Traditional Tiles", "Structural Integrity", "Weatherproofing"]
+        },
+        "interior_restoration": {
+          "title": "Interior Restoration",
+          "description": "Restoration of historic interior features including plasterwork, moldings, and fixtures.",
+          "features": ["Plasterwork", "Historic Moldings", "Period Fixtures"]
+        },
+        "modern_integration_service": {
+          "title": "Modern Integration",
+          "description": "Integration of modern systems and amenities while preserving historical authenticity.",
+          "features": ["Modern Plumbing", "Electrical Systems", "Climate Control"]
+        }
+      }
+    },
+    "process": {
+      "title": "Restoration",
+      "title_bold": "Process",
+      "subtitle": "A careful and methodical approach to historic restoration",
+      "steps": {
+        "historical_assessment": {
+          "step": "01",
+          "title": "Historical Assessment",
+          "description": "Comprehensive historical research and assessment of the property's significance and condition."
+        },
+        "conservation_planning": {
+          "step": "02",
+          "title": "Conservation Planning",
+          "description": "Development of conservation plans that balance preservation with modern functionality."
+        },
+        "authentic_restoration": {
+          "step": "03",
+          "title": "Authentic Restoration",
+          "description": "Careful restoration using traditional techniques and authentic materials."
+        },
+        "modern_integration_step": {
+          "step": "04",
+          "title": "Modern Integration",
+          "description": "Integration of modern systems while preserving historical authenticity and character."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Restore History?",
+      "subtitle": "Let's discuss your restoration project and preserve Cyprus's architectural heritage",
+      "button": "Start Your Restoration"
+    }
+  },
+      "contact": {
+        "title": "START YOUR PROJECT",
+        "title_bold": "PROJECT",
+        "subtitle": "Ready to bring your vision to life? Let's discuss your project and create something extraordinary together.",
+        "company_name_part1": "NICOLAS EFSTATHIOU",
+        "company_name_part2": "CONSTRUCTIONS LTD",
+        "company_description": "With over two decades of excellence in construction and architectural innovation, we transform visions into remarkable realities across Cyprus.",
+        "office_location": "Office Location",
+        "location": "Nicosia, Cyprus",
+        "location_note": "Available for projects island-wide",
+        "phone": "Phone",
+        "phone_number": "+357 XX XXX XXX",
+        "phone_hours": "Mon - Fri, 9:00 AM - 6:00 PM",
+        "email": "Email",
+        "email_address": "info@efstathiou-constructions.com",
+        "email_response": "We respond within 24 hours",
+        "form_title": "Get In Touch",
+        "form_subtitle": "Tell us about your project and we'll get back to you with a detailed proposal.",
+        "full_name": "Full Name",
+        "email_address_field": "Email Address",
+        "phone_number_field": "Phone Number",
+        "project_location": "Project Location",
+        "project_type": "Project Type",
+        "budget_range": "Budget Range",
+        "project_timeline": "Project Timeline",
+        "project_details": "Project Details",
+        "send_message": "SEND MESSAGE",
+        "placeholders": {
+          "full_name": "Your full name",
+          "email": "your@email.com",
+          "phone": "+357 XX XXX XXX",
+          "location": "City, Cyprus",
+          "project_type": "Select project type",
+          "budget": "Select budget range",
+          "timeline": "Select timeline",
+          "message": "Tell us about your vision, specific requirements, or any questions you have..."
+        },
+        "project_types": {
+          "luxury_villa": "Luxury Villa",
+          "commercial_space": "Commercial Space",
+          "renovation": "Renovation",
+          "custom_home": "Custom Home",
+          "development": "Development",
+          "restoration": "Restoration",
+          "other": "Other"
+        },
+        "budget_ranges": {
+          "under_500k": "Under €500K",
+          "500k_1m": "€500K - €1M",
+          "1m_2m": "€1M - €2M",
+          "2m_5m": "€2M - €5M",
+          "above_5m": "Above €5M",
+          "consultation": "Consultation Required"
+        },
+        "timelines": {
+          "3_months": "Within 3 months",
+          "3_6_months": "3-6 months",
+          "6_12_months": "6-12 months",
+          "1_2_years": "1-2 years",
+          "planning": "Planning phase",
+          "flexible": "Flexible"
+        }
+      },
+      "footer": {
+        "company_name_part1": "NICOLAS EFSTATHIOU",
+        "company_name_part2": "CONSTRUCTIONS LTD",
+        "description": "Creating exceptional spaces through innovative construction and architectural excellence. Setting new standards in modern living across Cyprus.",
+        "quickLinks": "QUICK LINKS",
+        "quickLinks_bold": "LINKS",
+        "home": "Home",
+        "about": "About",
+        "work": "Our Work",
+        "services": "Services",
+        "contact_link": "Contact",
+        "contact": "CONTACT",
+        "contact_bold": "CONTACT",
+        "location": "Nicosia, Cyprus",
+        "phone": "+357 XX XXX XXX",
+        "email": "info@efstathiou-constructions.com",
+        "copyright": "© 2024 Nicolas Efstathiou Constructions Ltd. All rights reserved."
+      }
+}

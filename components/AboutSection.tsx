@@ -5,10 +5,17 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 export default function AboutSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const pathname = usePathname()
+  const t = useTranslations('about')
+  
+  // Extract locale from pathname
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -156,18 +163,18 @@ export default function AboutSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 md:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 md:mb-6 greek-text"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            About <span className="font-bold">EFSTATHIOU</span>
+            {t('title').replace(t('title_bold'), '')} <span className="font-bold">{t('title_bold')}</span>
           </motion.h2>
           <motion.p 
             className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
           >
-            Two decades of architectural excellence and construction innovation across Cyprus
+            {t('subtitle')}
           </motion.p>
         </motion.div>
 
@@ -187,15 +194,15 @@ export default function AboutSection() {
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
             >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-3 sm:mb-4 tracking-wide">
-                Crafting Excellence Since 2003
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-3 sm:mb-4 tracking-wide greek-text">
+                {t('crafting_excellence')}
               </h3>
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
                 <span className="sm:hidden">
-                  Founded by Nicolas Efstathiou, we specialize in transforming visions into remarkable realities through meticulous craftsmanship and cutting-edge design.
+                  {t('description_mobile')}
                 </span>
                 <span className="hidden sm:inline">
-                  Founded by Nicolas Efstathiou, our construction company has been at the forefront of architectural innovation in Cyprus. We specialize in transforming visions into remarkable realities through meticulous craftsmanship and cutting-edge design.
+                  {t('description_desktop')}
                 </span>
               </p>
             </motion.div>
@@ -208,7 +215,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.2 }}
               >
                 <motion.div 
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-[#00343d] rounded-full flex items-center justify-center flex-shrink-0"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -217,13 +224,13 @@ export default function AboutSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Architectural Innovation</h4>
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2 greek-text">{t('architectural_innovation')}</h4>
                   <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                     <span className="sm:hidden">
-                      Contemporary design principles with traditional craftsmanship for stunning spaces.
+                      {t('innovation_mobile')}
                     </span>
                     <span className="hidden sm:inline">
-                      We blend contemporary design principles with traditional craftsmanship to create spaces that are both functional and aesthetically stunning.
+                      {t('innovation_desktop')}
                     </span>
                   </p>
                 </div>
@@ -236,7 +243,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.2 }}
               >
                 <motion.div 
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-[#00343d] rounded-full flex items-center justify-center flex-shrink-0"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -245,13 +252,13 @@ export default function AboutSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Quality Assurance</h4>
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2 greek-text">{t('quality_assurance')}</h4>
                   <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                     <span className="sm:hidden">
-                      Rigorous quality control ensuring perfection in every detail.
+                      {t('quality_mobile')}
                     </span>
                     <span className="hidden sm:inline">
-                      Every project undergoes rigorous quality control processes, ensuring that our clients receive nothing short of perfection in every detail.
+                      {t('quality_desktop')}
                     </span>
                   </p>
                 </div>
@@ -265,7 +272,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.2 }}
               >
                 <motion.div 
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0"
+                  className="w-12 h-12 bg-[#00343d] rounded-full flex items-center justify-center flex-shrink-0"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -274,9 +281,9 @@ export default function AboutSection() {
                   </svg>
                 </motion.div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Partnership</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2 greek-text">{t('client_partnership')}</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    We believe in building lasting relationships with our clients, working closely with them throughout every phase of their project.
+                    {t('partnership_description')}
                   </p>
                 </div>
               </motion.div>
@@ -300,7 +307,7 @@ export default function AboutSection() {
                 >
                   20+
                 </motion.div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">Years Experience</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{t('years_experience')}</div>
               </motion.div>
               <motion.div 
                 className="text-center"
@@ -315,7 +322,7 @@ export default function AboutSection() {
                 >
                   150+
                 </motion.div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">Projects Completed</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{t('projects_completed')}</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -357,7 +364,7 @@ export default function AboutSection() {
                 >
                   100%
                 </motion.div>
-                <div className="text-sm text-gray-600 font-medium">Client Satisfaction</div>
+                <div className="text-sm text-gray-600 font-medium">{t('client_satisfaction')}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -376,20 +383,15 @@ export default function AboutSection() {
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
           >
-            <span className="sm:hidden">
-              Ready to work with Cyprus&apos;s premier construction company?
-            </span>
-            <span className="hidden sm:inline">
-              Ready to work with Cyprus&apos;s premier construction company?
-            </span>
+            {t('cta_text')}
           </motion.p>
-          <Link href="/about">
+          <Link href={`/${locale}/about`}>
             <motion.button
-              className="inline-flex items-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-xs sm:text-sm md:text-base font-medium rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-[#00343d] text-white text-xs sm:text-sm md:text-base font-medium rounded-full hover:bg-[#004d5a] transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Learn More About Us</span>
+              <span>{t('learn_more')}</span>
               <motion.svg
                 className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                 fill="none"

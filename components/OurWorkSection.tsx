@@ -5,43 +5,42 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
-const featuredProjects = [
-  {
-    id: 'luxury-villa-1',
-    title: 'LUXURY VILLA',
-    subtitle: 'Ultra-Modern Residential',
-    description: 'A stunning contemporary villa featuring floor-to-ceiling windows, premium finishes, and innovative architectural design that seamlessly blends indoor and outdoor living.',
-    image: '/DJI_20251010165919_0078_D.JPG',
-    features: ['4 Bedrooms', 'Premium Materials', 'Smart Home Integration'],
-    year: '2023',
-    location: 'Limassol, Cyprus'
-  },
-  {
-    id: 'commercial-office',
-    title: 'COMMERCIAL COMPLEX',
-    subtitle: 'Modern Business Architecture',
-    description: 'A sophisticated office building designed for modern business needs, featuring sleek lines, efficient layouts, and professional aesthetics that inspire productivity.',
-    image: '/DJI_20251002103154_0038_D.JPG',
-    features: ['12 Floors', 'Corporate Design', 'Energy Efficient'],
-    year: '2022',
-    location: 'Nicosia, Cyprus'
-  },
-  {
-    id: 'apartment-complex',
-    title: 'APARTMENT COMPLEX',
-    subtitle: 'Contemporary Living',
-    description: 'A modern residential development that combines comfort with contemporary design, creating vibrant community spaces while maintaining premium quality standards.',
-    image: '/image.png',
-    features: ['24 Units', 'Community Spaces', 'Modern Amenities'],
-    year: '2023',
-    location: 'Paphos, Cyprus'
-  }
-]
+import { featuredProjects } from '@/lib/data'
+import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 
 export default function OurWorkSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const t = useTranslations('work')
+  const pathname = usePathname()
+  
+  // Extract locale from pathname
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
+
+  // Get translated project data
+  const getTranslatedProject = (project: any) => {
+    if (project.id === 'luxury-villa-1') {
+      return {
+        ...project,
+        title: t('luxury_villa.title'),
+        subtitle: t('luxury_villa.subtitle'),
+        description: t.raw('luxury_villa.description')[0],
+        features: t.raw('luxury_villa.features'),
+        location: t('luxury_villa.location')
+      }
+    } else if (project.id === 'commercial-office') {
+      return {
+        ...project,
+        title: t('commercial_complex.title'),
+        subtitle: t('commercial_complex.subtitle'),
+        description: t('commercial_complex.description'),
+        features: t.raw('commercial_complex.features'),
+        location: t('commercial_complex.location')
+      }
+    }
+    return project
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -174,18 +173,18 @@ export default function OurWorkSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-3 sm:mb-4 md:mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-3 sm:mb-4 md:mb-6 greek-text"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            Our <span className="font-bold">Work</span>
+            {t('title').replace(t('title_bold'), '')} <span className="font-bold">{t('title_bold')}</span>
           </motion.h2>
           <motion.p 
             className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
           >
-            Explore our portfolio of exceptional projects that showcase our commitment to architectural excellence and construction innovation
+            {t('subtitle')}
           </motion.p>
         </motion.div>
 
@@ -196,7 +195,9 @@ export default function OurWorkSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {featuredProjects.map((project, index) => (
+          {featuredProjects.map((project, index) => {
+            const translatedProject = getTranslatedProject(project)
+            return (
             <motion.div
               key={project.id}
               variants={cardVariants}
@@ -218,8 +219,8 @@ export default function OurWorkSection() {
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    src={project.image}
-                    alt={project.title}
+                    src={translatedProject.image}
+                    alt={translatedProject.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -234,7 +235,7 @@ export default function OurWorkSection() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <span className="text-gray-900 font-semibold text-xs sm:text-sm">{project.year}</span>
+                    <span className="text-gray-900 font-semibold text-xs sm:text-sm">{translatedProject.year}</span>
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -252,31 +253,31 @@ export default function OurWorkSection() {
                 >
                   <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                     <motion.div 
-                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-900 rounded-full"
+                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00343d] rounded-full"
                       whileHover={{ scale: 1.5 }}
                       transition={{ duration: 0.2 }}
                     ></motion.div>
                     <span className="text-xs sm:text-sm font-medium text-gray-500 tracking-wider uppercase">
-                      {project.location}
+                      {translatedProject.location}
                     </span>
                   </div>
                   
-                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-2 sm:mb-3 tracking-wide">
-                    {project.title}
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-2 sm:mb-3 tracking-wide greek-text">
+                    {translatedProject.title}
                   </h3>
                   
-                  <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-light">
-                    {project.subtitle}
+                  <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 font-light greek-text">
+                    {translatedProject.subtitle}
                   </p>
                   
                   <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
-                    {project.description}
+                    {translatedProject.description}
                   </p>
                 </motion.div>
 
                 {/* Features */}
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {project.features.map((feature, featureIndex) => (
+                  {translatedProject.features.map((feature: string, featureIndex: number) => (
                     <motion.span
                       key={featureIndex}
                       className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-50 text-gray-700 rounded-full text-xs sm:text-sm font-medium border border-gray-100"
@@ -294,30 +295,33 @@ export default function OurWorkSection() {
                 </div>
 
                 {/* CTA */}
-                <Link href={`/work/${project.id}`}>
-                  <motion.div 
-                    className="flex items-center text-gray-900 text-sm sm:text-base md:text-lg font-medium group-hover:text-gray-700 transition-colors duration-300 cursor-pointer"
-                    whileHover={{ x: 8 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span>View Project Details</span>
-                    <motion.svg
-                      className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 4 }}
+                <div className="pt-4">
+                  <Link href={`/${locale}/work/${project.id}`}>
+                    <motion.button
+                      className="inline-flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-medium rounded-full transition-colors duration-300 border border-gray-200 hover:border-gray-300"
+                      whileHover={{ scale: 1.05, y: -1 }}
+                      whileTap={{ scale: 0.95 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </motion.svg>
-                  </motion.div>
-                </Link>
+                      <span>{t('view_project')}</span>
+                      <motion.svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        initial={{ x: 0 }}
+                        whileHover={{ x: 2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </motion.svg>
+                    </motion.button>
+                  </Link>
+                </div>
               </motion.div>
             </motion.div>
-          ))}
+            )
+          })}
         </motion.div>
 
         {/* Bottom CTA */}
@@ -332,15 +336,15 @@ export default function OurWorkSection() {
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
           >
-            Want to see more of our exceptional work?
+            {t('cta_text')}
           </motion.p>
-          <Link href="/work">
+          <Link href={`/${locale}/work`}>
             <motion.button
-              className="inline-flex items-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-xs sm:text-sm md:text-base font-medium rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-[#00343d] text-white text-xs sm:text-sm md:text-base font-medium rounded-full hover:bg-[#004d5a] transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>View Full Portfolio</span>
+              <span>{t('view_portfolio')}</span>
               <motion.svg
                 className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                 fill="none"

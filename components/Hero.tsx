@@ -2,10 +2,20 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import ContactFormPopup from './ContactFormPopup'
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false)
+  const pathname = usePathname()
+  const t = useTranslations('hero')
+  
+  // Extract locale from pathname
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -185,10 +195,10 @@ export default function Hero() {
           
           {/* Secondary Subtitle */}
           <motion.p 
-            className="text-xs sm:text-sm md:text-base lg:text-lg text-white/80 font-light tracking-[0.15em] uppercase"
+            className="text-xs sm:text-sm md:text-base lg:text-lg text-white/80 font-light tracking-[0.15em] uppercase greek-text"
             variants={subtitleVariants}
           >
-            Premium Quality Solutions
+            {t('subtitle')}
           </motion.p>
           
           {/* Main Title */}
@@ -196,16 +206,16 @@ export default function Hero() {
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-tight sm:leading-tight md:leading-none tracking-wide md:tracking-[0.05em] lg:tracking-[0.08em]"
             variants={titleVariants}
           >
-            <span className="font-light block sm:inline">EFSTATHIOU</span>
-            <span className="font-bold block sm:inline"> CONSTRUCTIONS</span>
+            <span className="font-light block sm:inline">{t('title_part1')}</span>
+            <span className="font-bold block sm:inline"> {t('title_part2')}</span>
           </motion.h1>
           
           {/* Tagline */}
           <motion.p 
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 font-light leading-relaxed max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto px-2"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 font-light leading-relaxed max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto px-2 greek-text"
             variants={taglineVariants}
           >
-            Where architectural vision meets construction excellence.
+            {t('tagline')}
           </motion.p>
           
           {/* CTA Buttons */}
@@ -214,23 +224,26 @@ export default function Hero() {
             variants={buttonsVariants}
           >
             <motion.button 
-              className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm md:text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 w-full max-w-[240px] sm:max-w-[280px] md:min-w-[200px] md:w-auto"
+              className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm md:text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 w-full max-w-[240px] sm:max-w-[280px] md:min-w-[200px] md:w-auto greek-text"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
+              onClick={() => setIsContactPopupOpen(true)}
             >
-              <span className="relative z-10">VIEW OUR WORK</span>
+              <span className="relative z-10">{t('cta.consultation')}</span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </motion.button>
             
-            <motion.button 
-              className="text-white text-xs sm:text-sm md:text-sm font-medium tracking-wider border-b border-white/50 pb-1 hover:border-white transition-colors duration-300 hover:text-white/80"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-            >
-              VIEW SERVICES
-            </motion.button>
+            <Link href={`/${locale}/services`}>
+              <motion.button 
+                className="text-white text-xs sm:text-sm md:text-sm font-medium tracking-wider border-b border-white/50 pb-1 hover:border-white transition-colors duration-300 hover:text-white/80 greek-text"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                {t('cta.services')}
+              </motion.button>
+            </Link>
           </motion.div>
           
         </motion.div>
@@ -245,11 +258,11 @@ export default function Hero() {
       >
         <div className="flex flex-col items-center text-white/70 group cursor-pointer">
           <motion.span 
-            className="text-xs font-light tracking-wider mb-2 group-hover:text-white transition-colors duration-300"
+            className="text-xs font-light tracking-wider mb-2 group-hover:text-white transition-colors duration-300 greek-text"
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            SCROLL
+            {t('scroll')}
           </motion.span>
           <motion.div 
             className="w-px h-6 sm:h-8 md:h-10 bg-white/30 group-hover:bg-white/60 transition-colors duration-300"
@@ -258,6 +271,12 @@ export default function Hero() {
           />
         </div>
       </motion.div>
+
+      {/* Contact Form Popup */}
+      <ContactFormPopup 
+        isOpen={isContactPopupOpen} 
+        onClose={() => setIsContactPopupOpen(false)} 
+      />
 
     </section>
   )

@@ -5,45 +5,30 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
-const services = [
-  {
-    id: 'construction',
-    title: 'Construction',
-    subtitle: 'From Foundation to Finish',
-    description: 'We specialize in comprehensive construction services, building exceptional properties from the ground up.',
-    image: '/Construction.jpg',
-    features: ['Custom Home Construction', 'Commercial Buildings', 'Project Management', 'Quality Control']
-  },
-  {
-    id: 'renovation',
-    title: 'Renovation',
-    subtitle: 'Transform Your Space',
-    description: 'Breathe new life into existing properties with our comprehensive renovation services.',
-    image: '/Renovation.png',
-    features: ['Kitchen Renovations', 'Bathroom Remodeling', 'Interior Design', 'Structural Updates']
-  },
-  {
-    id: 'expansion',
-    title: 'Expansion',
-    subtitle: 'Grow Your Property',
-    description: 'Expand your living or working space with our expert expansion services.',
-    image: '/Expansion.jpg',
-    features: ['Room Additions', 'Floor Extensions', 'Outdoor Spaces', 'Commercial Expansion']
-  },
-  {
-    id: 'restoration',
-    title: 'Restoration',
-    subtitle: 'Preserve & Enhance',
-    description: 'Restore historic buildings while preserving their heritage and adding modern functionality.',
-    image: '/Restoration.jpg',
-    features: ['Historic Preservation', 'Heritage Compliance', 'Modern Integration', 'Authentic Materials']
-  }
-]
+import { services } from '@/lib/data'
+import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 
 export default function NewServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const t = useTranslations('services')
+  const pathname = usePathname()
+  
+  // Extract locale from pathname
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
+
+  // Get translated service data
+  const getTranslatedService = (service: any) => {
+    const serviceKey = service.id as keyof typeof t.raw
+    return {
+      ...service,
+      title: t(`${service.id}.title`),
+      subtitle: t(`${service.id}.subtitle`),
+      description: t(`${service.id}.description`),
+      features: t.raw(`${service.id}.features`)
+    }
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -175,18 +160,18 @@ export default function NewServicesSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 md:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 md:mb-6 greek-text"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            Our <span className="font-bold">Services</span>
+            {t('title').replace(t('title_bold'), '')} <span className="font-bold">{t('title_bold')}</span>
           </motion.h2>
           <motion.p 
-            className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed greek-text"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
           >
-            Comprehensive construction and architectural solutions crafted with precision and excellence
+            {t('subtitle')}
           </motion.p>
         </motion.div>
 
@@ -197,7 +182,9 @@ export default function NewServicesSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {services.map((service, index) => (
+          {services.map((service, index) => {
+            const translatedService = getTranslatedService(service)
+            return (
             <motion.div
               key={service.id}
               variants={cardVariants}
@@ -208,7 +195,7 @@ export default function NewServicesSection() {
               }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <Link href={`/services/${service.id}`}>
+              <Link href={`/${locale}/services/${service.id}`}>
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 border border-gray-100 hover:border-gray-200 group-hover:scale-[1.01]">
                   {/* Gradient Background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -224,7 +211,7 @@ export default function NewServicesSection() {
                       >
                         <Image
                           src={service.image}
-                          alt={service.title}
+                          alt={translatedService.title}
                           fill
                           className="object-cover transition-all duration-700 group-hover:brightness-110"
                           sizes="(max-width: 1024px) 100vw, 50vw"
@@ -263,35 +250,35 @@ export default function NewServicesSection() {
 
                       <div className="relative z-10">
                         <motion.h3 
-                          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors duration-300"
+                          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors duration-300 greek-text"
                           whileHover={{ x: 5 }}
                           transition={{ duration: 0.2 }}
                         >
-                          {service.title}
+                          {translatedService.title}
                         </motion.h3>
                         
                         <motion.p 
-                          className="text-gray-500 text-lg md:text-xl font-semibold mb-6 group-hover:text-gray-600 transition-colors duration-300"
+                          className="text-gray-500 text-lg md:text-xl font-semibold mb-6 group-hover:text-gray-600 transition-colors duration-300 greek-text"
                           whileHover={{ x: 5 }}
                           transition={{ duration: 0.2, delay: 0.1 }}
                         >
-                          {service.subtitle}
+                          {translatedService.subtitle}
                         </motion.p>
                         
                         <motion.p 
-                          className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 group-hover:text-gray-700 transition-colors duration-300"
+                          className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 group-hover:text-gray-700 transition-colors duration-300 greek-text"
                           whileHover={{ x: 5 }}
                           transition={{ duration: 0.2, delay: 0.2 }}
                         >
-                          {service.description}
+                          {translatedService.description}
                         </motion.p>
 
                         {/* Animated Features */}
                         <div className="flex flex-wrap gap-3 mb-8">
-                          {service.features.map((feature, featureIndex) => (
+                          {translatedService.features.map((feature: string, featureIndex: number) => (
                             <motion.span
                               key={featureIndex}
-                              className="text-sm md:text-base px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-50 text-gray-700 rounded-full border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-md"
+                              className="text-sm md:text-base px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-50 text-gray-700 rounded-full border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-md greek-text"
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: (index * 0.1) + (featureIndex * 0.1), duration: 0.5 }}
@@ -304,12 +291,12 @@ export default function NewServicesSection() {
 
                         {/* Cool CTA Button */}
                         <motion.div 
-                          className="inline-flex items-center text-gray-900 text-lg font-semibold group-hover:text-gray-700 transition-colors duration-300"
+                          className="inline-flex items-center text-gray-900 text-lg font-semibold group-hover:text-gray-700 transition-colors duration-300 greek-text"
                           whileHover={{ x: 8 }}
                           transition={{ duration: 0.3 }}
                         >
                           <span className="relative">
-                            Learn More About {service.title}
+                            {t('learn_more_about')} {translatedService.title}
                             <motion.div
                               className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"
                               initial={{ width: 0 }}
@@ -341,7 +328,8 @@ export default function NewServicesSection() {
                 </div>
               </Link>
             </motion.div>
-          ))}
+            )
+          })}
         </motion.div>
 
         {/* Bottom CTA */}
@@ -352,19 +340,19 @@ export default function NewServicesSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.p 
-            className="text-gray-600 mb-6 md:mb-8 text-base md:text-lg"
+            className="text-gray-600 mb-6 md:mb-8 text-base md:text-lg greek-text"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
           >
-            Ready to bring your vision to life?
+            {t('cta_text')}
           </motion.p>
-          <Link href="/services">
+          <Link href={`/${locale}/services`}>
             <motion.button
-              className="inline-flex items-center px-8 md:px-10 py-4 md:py-5 bg-gray-900 text-white text-sm md:text-base font-medium rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-8 md:px-10 py-4 md:py-5 bg-[#00343d] text-white text-sm md:text-base font-medium rounded-full hover:bg-[#004d5a] transition-all duration-300 shadow-lg hover:shadow-xl greek-text"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>View All Services</span>
+              <span>{t('view_all_services')}</span>
               <motion.svg
                 className="w-5 h-5 ml-2"
                 fill="none"
