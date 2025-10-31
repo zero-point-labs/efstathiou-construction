@@ -59,13 +59,7 @@ export default function Header({ isDark = false }: HeaderProps) {
     return false
   }
 
-  // Function to scroll to contact section
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+  // Function removed - now using Link navigation
 
   return (
     <>
@@ -170,19 +164,20 @@ export default function Header({ isDark = false }: HeaderProps) {
         </div>
         
         {/* Desktop Contact Button */}
-        <motion.button 
-          className={`hidden md:block text-xs lg:text-sm font-medium tracking-wider border px-3 lg:px-4 py-2 transition-all duration-300 ${
-            shouldUseDarkTheme && scrollY < 100
-              ? 'text-white border-white/40 hover:bg-white hover:text-black'
-              : 'text-gray-900 border-gray-900/40 hover:bg-gray-900 hover:text-white'
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.2 }}
-          onClick={scrollToContact}
-        >
-          {t('contact')}
-        </motion.button>
+        <Link href={`/${locale}/contact`}>
+          <motion.button 
+            className={`hidden md:block text-xs lg:text-sm font-medium tracking-wider border px-3 lg:px-4 py-2 transition-all duration-300 ${
+              shouldUseDarkTheme && scrollY < 100
+                ? 'text-white border-white/40 hover:bg-white hover:text-black'
+                : 'text-gray-900 border-gray-900/40 hover:bg-gray-900 hover:text-white'
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            {t('contact')}
+          </motion.button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <motion.button 
@@ -376,25 +371,24 @@ export default function Header({ isDark = false }: HeaderProps) {
               }}
               transition={{ delay: 0.5, duration: 0.3 }}
             >
-              <motion.button
-                className="w-full bg-gradient-to-r from-[#00343d] to-[#004d5a] text-white font-medium tracking-wide py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => {
-                  setMobileMenuOpen(false)
-                  scrollToContact()
-                }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="flex items-center justify-center gap-2">
-                  {t('contact')}
-                  <motion.div
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ChevronRight size={20} />
-                  </motion.div>
-                </span>
-              </motion.button>
+              <Link href={`/${locale}/contact`}>
+                <motion.button
+                  className="w-full bg-gradient-to-r from-[#00343d] to-[#004d5a] text-white font-medium tracking-wide py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    {t('contact')}
+                    <motion.div
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ChevronRight size={20} />
+                    </motion.div>
+                  </span>
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>

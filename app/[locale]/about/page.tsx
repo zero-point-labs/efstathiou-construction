@@ -8,11 +8,14 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 
 export default function AboutPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const t = useTranslations('aboutPage')
+  const pathname = usePathname()
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -63,29 +66,6 @@ export default function AboutPage() {
             </p>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-        >
-          <div className="flex flex-col items-center text-white/70 group cursor-pointer">
-            <motion.span 
-              className="text-sm font-light tracking-wider mb-2 group-hover:text-white transition-colors duration-300 greek-text"
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              {t('hero.scroll')}
-            </motion.span>
-            <motion.div 
-              className="w-px h-8 bg-white/30 group-hover:bg-white/60 transition-colors duration-300"
-              animate={{ scaleY: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Our Story Section */}
@@ -336,7 +316,7 @@ export default function AboutPage() {
             <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed greek-text">
               {t('cta.subtitle')}
             </p>
-            <Link href="/contact">
+            <Link href={`/${locale}/contact`}>
               <motion.button
                 className="inline-flex items-center px-8 md:px-10 py-4 md:py-5 bg-[#00343d] text-white text-sm md:text-base font-medium rounded-full hover:bg-[#004d5a] transition-all duration-300 shadow-lg hover:shadow-xl greek-text"
                 whileHover={{ scale: 1.05 }}

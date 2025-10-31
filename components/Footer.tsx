@@ -2,10 +2,14 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const pathname = usePathname()
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
+  
   return (
     <footer className="bg-[#001a1f] text-white py-16">
       <div className="container mx-auto max-w-7xl px-8">
@@ -16,7 +20,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <Link href="/">
+              <Link href={`/${locale}`}>
                 <Image
                   src="/For-Black-Tshirt.png"
                   alt="Nicolas Efstathiou Constructions Ltd"
@@ -36,11 +40,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-medium mb-6 tracking-wide greek-text">{t('quickLinks').replace(t('quickLinks_bold'), '')} <span className="font-bold">{t('quickLinks_bold')}</span></h3>
             <ul className="space-y-3">
-              <li><Link href="/" className="text-white/80 hover:text-white transition-colors font-light">Home</Link></li>
-              <li><Link href="/about" className="text-white/80 hover:text-white transition-colors font-light">About</Link></li>
-              <li><Link href="/work" className="text-white/80 hover:text-white transition-colors font-light">Our Work</Link></li>
-              <li><Link href="/services" className="text-white/80 hover:text-white transition-colors font-light">Services</Link></li>
-              <li><a href="#contact" className="text-white/80 hover:text-white transition-colors font-light">Contact</a></li>
+              <li><Link href={`/${locale}`} className="text-white/80 hover:text-white transition-colors font-light">Home</Link></li>
+              <li><Link href={`/${locale}/about`} className="text-white/80 hover:text-white transition-colors font-light">About</Link></li>
+              <li><Link href={`/${locale}/work`} className="text-white/80 hover:text-white transition-colors font-light">Our Work</Link></li>
+              <li><Link href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors font-light">Services</Link></li>
+              <li><Link href={`/${locale}/contact`} className="text-white/80 hover:text-white transition-colors font-light">Contact</Link></li>
             </ul>
           </div>
 

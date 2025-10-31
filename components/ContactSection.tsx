@@ -14,11 +14,6 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    projectType: '',
-    budget: '',
-    timeline: '',
-    location: '',
     message: ''
   })
 
@@ -409,202 +404,54 @@ export default function ContactSection() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               
-              {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div 
-                  className="relative"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('full_name')} *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    onFocus={() => setFocusedField('name')}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
-                      focusedField === 'name' 
-                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                    placeholder={t('placeholders.full_name')}
-                    required
-                  />
-                </motion.div>
-                <motion.div 
-                  className="relative"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('email_address_field')} *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    onFocus={() => setFocusedField('email')}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
-                      focusedField === 'email' 
-                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                    placeholder={t('placeholders.email')}
-                    required
-                  />
-                </motion.div>
-              </div>
-
-              {/* Phone and Location Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div 
-                  className="relative"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('phone_number_field')}</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    onFocus={() => setFocusedField('phone')}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
-                      focusedField === 'phone' 
-                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                    placeholder={t('placeholders.phone')}
-                  />
-                </motion.div>
-                <motion.div 
-                  className="relative"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_location')}</label>
-                  <input
-                    type="text"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleInputChange}
-                    onFocus={() => setFocusedField('location')}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
-                      focusedField === 'location' 
-                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                    placeholder={t('placeholders.location')}
-                  />
-                </motion.div>
-              </div>
-
-              {/* Project Type and Budget Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div 
-                  className="relative"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_type')} *</label>
-                  <select
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleInputChange}
-                    onFocus={() => setFocusedField('projectType')}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 bg-white appearance-none cursor-pointer text-gray-900 ${
-                      focusedField === 'projectType' 
-                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                    style={{ color: '#111827' }}
-                    required
-                  >
-                    <option value="" disabled style={{ color: '#9CA3AF' }}>{t('placeholders.project_type')}</option>
-                    {projectTypes.map((type) => (
-                      <option key={type} value={type} style={{ color: '#111827', backgroundColor: '#ffffff' }}>{type}</option>
-                    ))}
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-8">
-                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </motion.div>
-                <motion.div 
-                  className="relative"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('budget_range')}</label>
-                  <select
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    onFocus={() => setFocusedField('budget')}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 bg-white appearance-none cursor-pointer text-gray-900 ${
-                      focusedField === 'budget' 
-                        ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                    style={{ color: '#111827' }}
-                  >
-                    <option value="" disabled style={{ color: '#9CA3AF' }}>{t('placeholders.budget')}</option>
-                    {budgetRanges.map((range) => (
-                      <option key={range} value={range} style={{ color: '#111827', backgroundColor: '#ffffff' }}>{range}</option>
-                    ))}
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-8">
-                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Timeline */}
+              {/* Name */}
               <motion.div 
                 className="relative"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('project_timeline')}</label>
-                <select
-                  name="timeline"
-                  value={formData.timeline}
+                <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('full_name')} *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
                   onChange={handleInputChange}
-                  onFocus={() => setFocusedField('timeline')}
+                  onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 bg-white appearance-none cursor-pointer text-gray-900 ${
-                    focusedField === 'timeline' 
+                  className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
+                    focusedField === 'name' 
                       ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
-                  style={{ color: '#111827' }}
-                >
-                  <option value="" disabled style={{ color: '#9CA3AF' }}>{t('placeholders.timeline')}</option>
-                  {timelines.map((time) => (
-                    <option key={time} value={time} style={{ color: '#111827', backgroundColor: '#ffffff' }}>{time}</option>
-                  ))}
-                </select>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-8">
-                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
+                  placeholder={t('placeholders.full_name')}
+                  required
+                />
+              </motion.div>
+
+              {/* Email */}
+              <motion.div 
+                className="relative"
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              >
+                <label className="block text-sm font-medium text-gray-700 mb-2 greek-text">{t('email_address_field')} *</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  onFocus={() => setFocusedField('email')}
+                  onBlur={() => setFocusedField(null)}
+                  className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
+                    focusedField === 'email' 
+                      ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                  placeholder={t('placeholders.email')}
+                  required
+                />
               </motion.div>
 
               {/* Message */}

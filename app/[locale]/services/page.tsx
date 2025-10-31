@@ -68,29 +68,6 @@ export default function ServicesPage() {
             </p>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-        >
-          <div className="flex flex-col items-center text-white/70 group cursor-pointer">
-            <motion.span 
-              className="text-sm font-light tracking-wider mb-2 group-hover:text-white transition-colors duration-300 greek-text"
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              {t('hero.scroll')}
-            </motion.span>
-            <motion.div 
-              className="w-px h-8 bg-white/30 group-hover:bg-white/60 transition-colors duration-300"
-              animate={{ scaleY: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Services Overview Section */}
