@@ -457,7 +457,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       onFocus={() => setFocusedField('name')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
+                      className={`w-full px-4 py-3 bg-white text-gray-900 border rounded-lg transition-all duration-200 ${
                         focusedField === 'name' 
                           ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                           : 'border-gray-200 hover:border-gray-300'
@@ -480,7 +480,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       onFocus={() => setFocusedField('email')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
+                      className={`w-full px-4 py-3 bg-white text-gray-900 border rounded-lg transition-all duration-200 ${
                         focusedField === 'email' 
                           ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                           : 'border-gray-200 hover:border-gray-300'
@@ -507,7 +507,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       onFocus={() => setFocusedField('phone')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
+                      className={`w-full px-4 py-3 bg-white text-gray-900 border rounded-lg transition-all duration-200 ${
                         focusedField === 'phone' 
                           ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                           : 'border-gray-200 hover:border-gray-300'
@@ -529,7 +529,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       onFocus={() => setFocusedField('location')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 ${
+                      className={`w-full px-4 py-3 bg-white text-gray-900 border rounded-lg transition-all duration-200 ${
                         focusedField === 'location' 
                           ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                           : 'border-gray-200 hover:border-gray-300'
@@ -654,7 +654,7 @@ export default function ContactPage() {
                     onFocus={() => setFocusedField('message')}
                     onBlur={() => setFocusedField(null)}
                     rows={4}
-                    className={`w-full px-4 py-3 border rounded-lg transition-all duration-200 resize-none ${
+                    className={`w-full px-4 py-3 bg-white text-gray-900 border rounded-lg transition-all duration-200 resize-none ${
                       focusedField === 'message' 
                         ? 'border-[#00343d] ring-2 ring-[#00343d]/10' 
                         : 'border-gray-200 hover:border-gray-300'
