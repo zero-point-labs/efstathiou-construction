@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -12,6 +13,8 @@ export default function ContactPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const t = useTranslations('contact')
+  const pathname = usePathname()
+  const locale = pathname.startsWith('/el') ? 'el' : 'en'
 
   const [formData, setFormData] = useState({
     name: '',
@@ -199,6 +202,30 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       <Header isDark={false} />
+      
+      {/* Hero Section */}
+      <section className="relative h-[60vh] overflow-hidden bg-gradient-to-br from-[#00343d] via-[#004d5a] to-[#001a1f]">
+        {/* Subtle animated overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+        
+        {/* Hero Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-8">
+          <motion.div 
+            className="text-center max-w-4xl mx-auto space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight ${locale === 'el' ? 'greek-text' : ''}`}>
+              <span className="font-light block sm:inline">{t('title').replace(t('title_bold'), '')}</span>
+              <span className="font-bold block sm:inline"> {t('title_bold')}</span>
+            </h1>
+            <p className={`text-lg sm:text-xl md:text-2xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto ${locale === 'el' ? 'greek-text' : ''}`}>
+              {t('subtitle')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
       
       <section ref={ref} className="bg-gray-50 py-24 relative overflow-hidden">
         
