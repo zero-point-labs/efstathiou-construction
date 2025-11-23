@@ -580,3 +580,6 @@ export default function Footer() {
 This plan provides a complete roadmap for implementing Greek translation with automatic language detection while maintaining the existing design and functionality of the website.
 
 
+
+
+

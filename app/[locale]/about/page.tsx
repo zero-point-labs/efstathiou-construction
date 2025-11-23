@@ -163,8 +163,8 @@ export default function AboutPage() {
             >
               <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/zio_dudee_Ultra-modern_luxury_house_at_dusk_with_selective_fl_d183ddd8-f296-430b-9dee-55fdd86d23e8_1.png"
-                  alt="About Efstathiou Constructions - Our Work"
+                  src="/35d92813-bddf-4248-9c02-4deb34cd8ee0.JPG"
+                  alt="About Efstathiou Constructions - Construction Site"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -280,10 +280,10 @@ export default function AboutPage() {
             animate={isInView ? "visible" : "hidden"}
           >
             {[
-              { number: "20+", label: t('stats.years_experience') },
-              { number: "150+", label: t('stats.projects_completed') },
-              { number: "100%", label: t('stats.client_satisfaction') },
-              { number: "50+", label: t('stats.team_members') }
+              { number: "50+", label: t('stats.large_scale_projects') },
+              { number: "18+", label: t('stats.years_experience') },
+              { number: "100%", label: t('stats.quality_guarantee') },
+              { number: "200+", label: t('stats.happy_clients') }
             ].map((stat, index) => (
               <motion.div
                 key={index}

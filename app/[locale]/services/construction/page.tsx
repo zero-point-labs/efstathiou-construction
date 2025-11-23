@@ -202,10 +202,11 @@ export default function ConstructionPage() {
             >
               <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/zio_dudee_Distinctive_ultra-modern_custom_home_at_dusk_featur_b3f74bd8-d1e1-417d-b64d-d29e71eed53b_2.png"
+                  src="/Our-Work-Content/Resitental-metal-const-img1.png"
                   alt="Construction Services - Custom Home Building"
                   fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover object-left transition-transform duration-700 hover:scale-105"
+                  style={{ objectPosition: 'left center' }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
@@ -323,14 +324,14 @@ export default function ConstructionPage() {
           >
             {[
               {
-                step: t('process.steps.planning.step'),
-                title: t('process.steps.planning.title'),
-                description: t('process.steps.planning.description')
-              },
-              {
                 step: t('process.steps.permits.step'), 
                 title: t('process.steps.permits.title'),
                 description: t('process.steps.permits.description')
+              },
+              {
+                step: t('process.steps.planning.step'),
+                title: t('process.steps.planning.title'),
+                description: t('process.steps.planning.description')
               },
               {
                 step: t('process.steps.foundation.step'),

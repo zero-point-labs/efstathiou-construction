@@ -305,7 +305,7 @@ export default function AboutSection() {
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.6, delay: 1.5 }}
                 >
-                  20+
+                  18+
                 </motion.div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{t('years_experience')}</div>
               </motion.div>
@@ -320,9 +320,9 @@ export default function AboutSection() {
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.6, delay: 1.7 }}
                 >
-                  150+
+                  200+
                 </motion.div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{t('projects_completed')}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{t('happy_clients')}</div>
               </motion.div>
             </motion.div>
           </motion.div>

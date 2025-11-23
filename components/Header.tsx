@@ -77,20 +77,22 @@ export default function Header({ isDark = false }: HeaderProps) {
     >
       <div className="flex items-center justify-between px-4 sm:px-6 md:px-8">
         {/* Logo */}
-        <motion.div 
-          className="flex items-center"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-        >
-          <Image
-            src={shouldUseDarkTheme && scrollY < 100 ? "/For-Black-Tshirt.png" : "/For-White-Tshirt(Dark-Blue).png"}
-            alt="Nicolas Efstathiou Constructions Ltd"
-            width={200}
-            height={80}
-            className="h-10 sm:h-12 md:h-16 w-auto"
-            priority
-          />
-        </motion.div>
+        <Link href={`/${locale}`}>
+          <motion.div 
+            className="flex items-center cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Image
+              src={shouldUseDarkTheme && scrollY < 100 ? "/For-Black-Tshirt.png" : "/For-White-Tshirt(Dark-Blue).png"}
+              alt="Nicolas Efstathiou Constructions Ltd"
+              width={200}
+              height={80}
+              className="h-10 sm:h-12 md:h-16 w-auto"
+              priority
+            />
+          </motion.div>
+        </Link>
         
         {/* Desktop Navigation */}
         <div className={`hidden md:flex space-x-8 lg:space-x-12 text-sm lg:text-base font-medium greek-text ${

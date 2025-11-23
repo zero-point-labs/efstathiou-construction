@@ -38,6 +38,15 @@ export default function OurWorkSection() {
         features: t.raw('commercial_complex.features'),
         location: t('commercial_complex.location')
       }
+    } else if (project.id === 'office-renovation-2025') {
+      return {
+        ...project,
+        title: t('office_renovation_2025.title'),
+        subtitle: t('office_renovation_2025.subtitle'),
+        description: t('office_renovation_2025.description'),
+        features: t.raw('office_renovation_2025.features'),
+        location: t('office_renovation_2025.location')
+      }
     }
     return project
   }

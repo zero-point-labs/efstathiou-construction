@@ -202,8 +202,8 @@ export default function ExpansionPage() {
             >
               <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/zio_dudee_Ultra-modern_sleek_office_building_at_dusk_with_exp_33e79970-4bc7-4b97-970f-2229ec32ea35_3.png"
-                  alt="Expansion Services - Commercial Building Expansion"
+                  src="/image.png"
+                  alt="Expansion Services - Property Expansion"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -323,6 +323,11 @@ export default function ExpansionPage() {
           >
             {[
               {
+                step: t('process.steps.permits.step'),
+                title: t('process.steps.permits.title'),
+                description: t('process.steps.permits.description')
+              },
+              {
                 step: t('process.steps.site_analysis.step'),
                 title: t('process.steps.site_analysis.title'),
                 description: t('process.steps.site_analysis.description')
@@ -331,11 +336,6 @@ export default function ExpansionPage() {
                 step: t('process.steps.design_engineering.step'), 
                 title: t('process.steps.design_engineering.title'),
                 description: t('process.steps.design_engineering.description')
-              },
-              {
-                step: t('process.steps.permits.step'),
-                title: t('process.steps.permits.title'),
-                description: t('process.steps.permits.description')
               },
               {
                 step: t('process.steps.construction.step'),

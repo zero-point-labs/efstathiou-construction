@@ -195,20 +195,58 @@ export default function RenovationPage() {
               </div>
             </motion.div>
 
-            {/* Image */}
+            {/* Before/After Images */}
             <motion.div 
-              className="relative"
+              className="relative space-y-8"
               variants={itemVariants}
             >
-              <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/zio_dudee_Ultra-modern_luxury_house_at_dusk_with_selective_fl_d183ddd8-f296-430b-9dee-55fdd86d23e8_1.png"
-                  alt="Renovation Services - Modern Home Transformation"
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+              {/* Before Image */}
+              <div className="relative w-full">
+                <div className="relative w-full h-56 md:h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/project3/before/WhatsApp Imajbjge 2025-11-05 at 20.18.45.jpeg"
+                    alt="Before Renovation"
+                    fill
+                    className="object-cover scale-x-[-1]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <div className="flex items-center gap-2 text-white/90">
+                      <div className="w-1 h-6 bg-white/60"></div>
+                      <span className="text-sm font-light tracking-wider uppercase">Before</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="flex items-center justify-center py-4">
+                <div className="flex items-center gap-4 w-full max-w-xs">
+                  <div className="flex-1 h-px bg-gray-300"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  <div className="flex-1 h-px bg-gray-300"></div>
+                </div>
+              </div>
+
+              {/* After Image */}
+              <div className="relative w-full">
+                <div className="relative w-full h-56 md:h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/project3/images/IMG_1380.png"
+                    alt="After Renovation"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <div className="flex items-center gap-2 text-white/90">
+                      <div className="w-1 h-6 bg-white/60"></div>
+                      <span className="text-sm font-light tracking-wider uppercase">After</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -316,7 +354,7 @@ export default function RenovationPage() {
 
           {/* Process Steps */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -326,11 +364,6 @@ export default function RenovationPage() {
                 step: t('process.steps.assessment.step'),
                 title: t('process.steps.assessment.title'),
                 description: t('process.steps.assessment.description')
-              },
-              {
-                step: t('process.steps.design.step'), 
-                title: t('process.steps.design.title'),
-                description: t('process.steps.design.description')
               },
               {
                 step: t('process.steps.demolition.step'),

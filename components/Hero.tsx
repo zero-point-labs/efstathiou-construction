@@ -5,12 +5,10 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
-import ContactFormPopup from './ContactFormPopup'
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false)
   const pathname = usePathname()
   const t = useTranslations('hero')
   
@@ -169,7 +167,7 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/1020.mp4" type="video/mp4" />
+          <source src="/1119.mp4" type="video/mp4" />
           {/* Fallback background image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-gray-800"
@@ -223,16 +221,17 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-16"
             variants={buttonsVariants}
           >
-            <motion.button 
-              className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm md:text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 w-full max-w-[240px] sm:max-w-[280px] md:min-w-[200px] md:w-auto greek-text"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-              onClick={() => setIsContactPopupOpen(true)}
-            >
-              <span className="relative z-10">{t('cta.consultation')}</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </motion.button>
+            <Link href={`/${locale}/contact`}>
+              <motion.button 
+                className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm md:text-sm font-medium tracking-wider hover:bg-white hover:text-black transition-all duration-500 w-full max-w-[240px] sm:max-w-[280px] md:min-w-[200px] md:w-auto greek-text"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                <span className="relative z-10">{t('cta.consultation')}</span>
+                <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              </motion.button>
+            </Link>
             
             <Link href={`/${locale}/services`}>
               <motion.button 
@@ -271,12 +270,6 @@ export default function Hero() {
           />
         </div>
       </motion.div>
-
-      {/* Contact Form Popup */}
-      <ContactFormPopup 
-        isOpen={isContactPopupOpen} 
-        onClose={() => setIsContactPopupOpen(false)} 
-      />
 
     </section>
   )

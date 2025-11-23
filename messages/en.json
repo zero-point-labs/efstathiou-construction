@@ -21,7 +21,7 @@
     "title": "About EFSTATHIOU",
     "title_bold": "EFSTATHIOU",
     "subtitle": "Two decades of architectural excellence and construction innovation across Cyprus",
-    "crafting_excellence": "Crafting Excellence Since 2003",
+    "crafting_excellence": "Crafting Excellence Since 2006",
     "description_mobile": "Founded by Nicolas Efstathiou, we specialize in transforming visions into exceptional realities through meticulous craftsmanship and contemporary design.",
     "description_desktop": "Founded by Nicolas Efstathiou, our construction company stands at the forefront of architectural innovation in Cyprus. We specialize in transforming visions into exceptional realities through meticulous craftsmanship and contemporary design.",
     "architectural_innovation": "Architectural Innovation",
@@ -32,8 +32,10 @@
     "quality_desktop": "Every project undergoes rigorous quality control processes, ensuring our clients receive nothing less than perfection in every detail.",
     "client_partnership": "Client Partnership",
     "partnership_description": "We believe in building long-term relationships with our clients, working closely with them throughout every phase of their project.",
-    "years_experience": "Years Experience",
-    "projects_completed": "Projects Completed",
+    "years_experience": "Years of Experience",
+    "quality_services": "Premium Quality Services",
+    "wide_range_services": "Comprehensive Service Range",
+    "happy_clients": "Satisfied Clients",
     "client_satisfaction": "Client Satisfaction",
     "cta_text": "Ready to work with Cyprus's premier construction company?",
     "learn_more": "Learn More About Us"
@@ -50,7 +52,7 @@
       "title_bold": "Story",
       "subtitle": "From humble beginnings to becoming Cyprus's premier construction company",
       "founded_title": "Founded on Excellence",
-      "founded_description_1": "Founded by Nicolas Efstathiou in 2003, our construction company has been at the forefront of architectural innovation in Cyprus. What started as a small family business has grown into one of the most respected construction companies on the island.",
+      "founded_description_1": "Founded by Nicolas Efstathiou in 2006, our construction company has been at the forefront of architectural innovation in Cyprus. What started as a small family business has grown into one of the most respected construction companies on the island.",
       "founded_description_2": "Our journey began with a simple vision: to transform the construction industry in Cyprus by combining traditional craftsmanship with modern architectural techniques. Over the years, we have built a reputation for delivering exceptional quality and innovative design solutions.",
       "architectural_innovation": "Architectural Innovation",
       "innovation_description": "We blend contemporary design principles with traditional craftsmanship to create spaces that are both functional and aesthetically stunning.",
@@ -92,10 +94,10 @@
       "title": "By The",
       "title_bold": "Numbers",
       "subtitle": "Our achievements speak for themselves",
-      "years_experience": "Years Experience",
-      "projects_completed": "Projects Completed",
-      "client_satisfaction": "Client Satisfaction",
-      "team_members": "Team Members"
+      "large_scale_projects": "Large-Scale Projects",
+      "years_experience": "Years of Experience",
+      "quality_guarantee": "Quality Guarantee",
+      "happy_clients": "Satisfied Clients"
     },
     "cta": {
       "title": "Ready to Work With Us?",
@@ -116,10 +118,10 @@
     "ready_to_start": "Ready to Start Your Project?",
     "ready_subtitle": "Let's discuss your vision and create something extraordinary together",
     "start_project": "Start Your Project",
-    "projects_completed": "Projects Completed",
-    "years_experience": "Years Experience",
-    "client_satisfaction": "Client Satisfaction",
-    "team_members": "Team Members",
+    "quality_services": "Premium Quality Services",
+    "wide_range_services": "Comprehensive Service Range",
+    "years_experience": "Years of Experience",
+    "happy_clients": "Satisfied Clients",
     "featured_projects": {
       "luxury_villa": {
         "title": "LUXURY VILLA",
@@ -136,15 +138,21 @@
         "features": ["12 Floors", "Corporate Design", "Energy Efficient"],
         "location": "Nicosia, Cyprus",
         "type": "Commercial"
+      },
+      "office_renovation_2025": {
+        "title": "OFFICE RENOVATION",
+        "subtitle": "Masterpiece Work Office Transformation",
+        "description": "A complete renovation project that transformed a dilapidated space into a stunning modern work office. Completed in just two months, this project showcases our expertise in renovation and interior design.",
+        "features": ["Complete Renovation", "Modern Office Design", "2 Month Timeline", "Interior Transformation"],
+        "location": "Cyprus",
+        "type": "Commercial"
       }
     },
     "luxury_villa": {
       "title": "RESIDENTIAL PROPERTY RENEWAL",
       "subtitle": "Specialized Maintenance & Aesthetic Enhancement",
       "specifications": {
-        "area": "450 sqm",
-        "duration": "3 months",
-        "budget": "€150K"
+        "duration": "1-2 months"
       },
       "description": [
         "Specialized maintenance and upgrade of a modern residence with focus on aesthetic improvement and preservation of architectural value. Careful exterior maintenance and contemporary enhancement that ensures long-term property value.",
@@ -155,17 +163,26 @@
       "type": "Residential"
     },
     "commercial_complex": {
-      "title": "MOUNTAIN RETREAT MITSERO",
+      "title": "METAL CONSTRUCTION HOME",
       "subtitle": "Quickly Built Mountain Home",
       "specifications": {
-        "area": "100 sqm",
-        "duration": "2 months",
-        "budget": "€80K"
+        "duration": "3 months"
       },
-      "description": "A practical and efficiently constructed mountain house in Mitsero, completed in just two months. This cozy retreat features a durable metal roof, spacious veranda, and a design that integrates seamlessly with its natural woodland surroundings.",
+      "description": "A practical and efficiently constructed metal construction home in Mitsero, completed in just three months. This cozy retreat features a durable metal roof, spacious veranda, and a design that integrates seamlessly with its natural woodland surroundings.",
       "features": ["Rapid Construction", "Mountain Location", "Functional Design", "Spacious Veranda", "Durable Metal Roof"],
       "location": "Mitsero, Cyprus",
       "type": "Residential"
+    },
+    "office_renovation_2025": {
+      "title": "OFFICE RENOVATION",
+      "subtitle": "Masterpiece Work Office Transformation",
+      "specifications": {
+        "duration": "2 months"
+      },
+      "description": "A complete renovation project that transformed a dilapidated space into a stunning modern work office. When we first encountered this project, it was in a state of disrepair - a complete mess that required extensive work. Through meticulous planning and expert craftsmanship, we transformed it into a masterpiece work office for our client. Completed in just two months, this project showcases our expertise in renovation and interior design, demonstrating how we can turn even the most challenging spaces into exceptional work environments.",
+      "features": ["Complete Renovation", "Modern Office Design", "2 Month Timeline", "Interior Transformation", "Professional Finish"],
+      "location": "Cyprus",
+      "type": "Commercial"
     },
     "view_project": "View Project",
     "cta_text": "Want to see more of our exceptional work?",
@@ -207,21 +224,34 @@
     "luxury_villa_solutions": [
       "Phased work approach to minimize disruption",
       "Flexible scheduling around client needs",
-      "Weather monitoring and contingency planning",
       "Expert craftsmen for heritage preservation"
     ],
     "commercial_complex_challenges": [
       "Working with mountainous and challenging terrain",
-      "Adhering to a strict two-month timeline",
-      "Managing supply logistics with limited access",
-      "Integrating with the natural woodland environment"
+      "Adhering to a strict three-month timeline"
     ],
     "commercial_complex_solutions": [
       "Efficient pre-fabrication and modular construction techniques",
       "Streamlined project management with dedicated on-site team",
-      "Use of robust, locally sourced materials suitable for mountain conditions",
-      "Design that respected and integrated with the natural environment"
+      "Use of robust, locally sourced materials suitable for mountain conditions"
     ],
+    "office_renovation_challenges": [
+      "Severe deterioration and structural issues in the original space",
+      "Tight two-month timeline for complete transformation",
+      "Coordinating multiple trades and suppliers simultaneously",
+      "Maintaining quality standards while meeting aggressive deadlines"
+    ],
+    "office_renovation_solutions": [
+      "Comprehensive initial assessment and strategic planning",
+      "Efficient project management with daily progress tracking",
+      "Coordinated team of skilled professionals working in parallel",
+      "Premium materials and finishes selected for durability and aesthetics"
+    ],
+    "testimonial_office_renovation": "We couldn't believe the transformation! What was once a complete mess is now a beautiful, professional work space. The team worked incredibly hard to complete this in just two months, and the quality is outstanding. We're thrilled with our new office!",
+    "before": "Before",
+    "before_description": "The initial state of the space - showing the challenges we faced",
+    "after": "After",
+    "after_description": "The stunning transformation - a modern masterpiece work office",
     "custom_home_1": {
       "specifications": {
         "area": "380 sqm",
@@ -254,10 +284,14 @@
         "architect": "Nicolas Efstathiou"
       }
     },
-    "projects_completed": "Projects Completed",
-    "years_experience": "Years Experience",
+    "quality_services": "Premium Quality Services",
+    "wide_range_services": "Comprehensive Service Range",
+    "years_experience": "Years of Experience",
+    "happy_clients": "Satisfied Clients",
     "client_satisfaction": "Client Satisfaction",
-    "team_members": "Team Members"
+    "team_members": "Team Members",
+    "large_scale_projects": "Large-Scale Projects",
+    "quality_guarantee": "Quality Guarantee"
   },
   "services": {
     "title": "Our Services",
@@ -281,12 +315,12 @@
       "subtitle": "Transform Your Space",
       "description": "Breathe new life into existing properties with our comprehensive renovation services. We transform outdated spaces into modern, functional environments while preserving the character and charm of your property.",
       "features": [
+        "Full Renovations",
         "Kitchen Renovations",
         "Bathroom Remodeling",
         "Interior Design",
         "Structural Updates",
-        "Energy Efficiency",
-        "Modern Amenities"
+        "Energy Efficiency"
       ]
     },
     "expansion": {
@@ -302,17 +336,16 @@
         "Permit Management"
       ]
     },
-    "restoration": {
-      "title": "Restoration",
-      "subtitle": "Preserve Heritage",
-      "description": "Restore historic properties to their former glory while integrating modern functionality. Our restoration experts combine traditional craftsmanship with contemporary techniques to preserve Cyprus's architectural heritage.",
+    "maintenance": {
+      "title": "Maintenance",
+      "subtitle": "Ongoing Care",
+      "description": "Professional property maintenance services to keep your buildings in optimal condition. Our maintenance team provides preventive care and prompt repairs to protect your investment.",
       "features": [
-        "Historic Preservation",
-        "Heritage Restoration",
-        "Traditional Craftsmanship",
-        "Modern Integration",
-        "Cultural Compliance",
-        "Authentic Materials"
+        "Preventive Maintenance",
+        "Emergency Repairs",
+        "Property Care",
+        "Quality Assurance",
+        "Long-term Protection"
       ]
     },
     "cta_text": "Ready to bring your vision to life?",
@@ -376,7 +409,7 @@
       "subtitle": "We specialize in comprehensive construction services, building exceptional properties from the ground up"
     },
     "building_excellence": {
-      "title": "Building Excellence Since 2003",
+      "title": "Building Excellence Since 2006",
       "description_1": "Our construction services encompass every aspect of building, from initial site preparation and foundation work to final finishes and quality assurance. We handle everything from custom homes to commercial buildings, ensuring each project meets the highest standards of quality and craftsmanship.",
       "description_2": "With over two decades of experience in Cyprus construction, we understand the unique challenges and opportunities of building in this beautiful Mediterranean environment. Our team combines traditional building techniques with modern construction methods to create structures that are both beautiful and durable."
     },
@@ -436,15 +469,15 @@
       "title_bold": "Process",
       "subtitle": "A systematic approach to delivering exceptional construction results",
       "steps": {
-        "planning": {
-          "step": "01",
-          "title": "Planning & Design",
-          "description": "Site analysis, architectural design, and comprehensive planning for your construction project."
-        },
         "permits": {
-          "step": "02",
+          "step": "01",
           "title": "Permits & Approvals",
           "description": "Handling all necessary permits, approvals, and regulatory compliance requirements."
+        },
+        "planning": {
+          "step": "02",
+          "title": "Planning & Design",
+          "description": "Site analysis, architectural design, and comprehensive planning for your construction project."
         },
         "foundation": {
           "step": "03",
@@ -540,18 +573,13 @@
           "title": "Assessment & Planning",
           "description": "Detailed assessment of existing conditions and comprehensive renovation planning."
         },
-        "design": {
-          "step": "02",
-          "title": "Design & Permits",
-          "description": "Custom design development and handling all necessary permits and approvals."
-        },
         "demolition": {
-          "step": "03",
+          "step": "02",
           "title": "Demolition & Prep",
           "description": "Careful demolition and site preparation for the renovation work."
         },
         "construction": {
-          "step": "04",
+          "step": "03",
           "title": "Construction & Finishing",
           "description": "Renovation construction, installation, and final finishing touches."
         }
@@ -634,20 +662,20 @@
       "title_bold": "Process",
       "subtitle": "A systematic approach to expanding your property",
       "steps": {
-        "site_analysis": {
+        "permits": {
           "step": "01",
+          "title": "Permits & Approvals",
+          "description": "Handling all necessary permits, approvals, and regulatory compliance."
+        },
+        "site_analysis": {
+          "step": "02",
           "title": "Site Analysis",
           "description": "Comprehensive site analysis and feasibility study for your expansion project."
         },
         "design_engineering": {
-          "step": "02",
+          "step": "03",
           "title": "Design & Engineering",
           "description": "Custom design development and structural engineering for safe expansion."
-        },
-        "permits": {
-          "step": "03",
-          "title": "Permits & Approvals",
-          "description": "Handling all necessary permits, approvals, and regulatory compliance."
         },
         "construction": {
           "step": "04",
@@ -662,103 +690,98 @@
       "button": "Start Your Expansion"
     }
   },
-  "restorationPage": {
+  "maintenancePage": {
     "hero": {
-      "subtitle": "Preserve Heritage - Restore Historic Properties to Their Former Glory",
+      "subtitle": "Professional Property Maintenance - Protect Your Investment",
       "scroll": "scroll"
     },
     "overview": {
-      "title": "Historic",
-      "title_bold": "Restoration",
-      "subtitle": "Restore historic properties to their former glory while integrating modern functionality"
+      "title": "Property",
+      "title_bold": "Maintenance",
+      "subtitle": "Professional maintenance services to keep your property in optimal condition"
     },
-    "preserving": {
-      "title": "Preserving Cyprus Heritage",
-      "description_1": "Our restoration services combine traditional craftsmanship with contemporary techniques to preserve Cyprus's rich architectural heritage. We specialize in restoring historic properties while integrating modern functionality and comfort.",
-      "description_2": "From traditional stone houses to historic commercial buildings, our restoration experts understand the delicate balance between preserving historical authenticity and meeting modern living standards. We work closely with heritage organizations and use authentic materials and techniques."
+    "protecting": {
+      "title": "Professional Property Maintenance",
+      "description_1": "Our professional maintenance services address your property's specific maintenance needs with quality workmanship and attention to detail. We provide comprehensive one-time maintenance solutions including inspections, repairs, and property care to keep your investment in excellent condition.",
+      "description_2": "From residential homes to commercial buildings, our experienced maintenance team handles a wide range of maintenance tasks. Whether you need a property inspection, specific repairs, or general maintenance work, we deliver professional results that protect your property value."
     },
     "features": {
-      "heritage_preservation": {
-        "title": "Heritage Preservation",
-        "description": "Careful preservation of historical features and architectural elements that define the property's character."
+      "property_inspection": {
+        "title": "Property Inspection",
+        "description": "Comprehensive property inspections to assess condition and identify maintenance needs."
       },
-      "traditional_craftsmanship": {
-        "title": "Traditional Craftsmanship",
-        "description": "Skilled craftsmen using traditional techniques and authentic materials for authentic restoration."
+      "professional_repairs": {
+        "title": "Professional Repairs",
+        "description": "Expert repair services for all property systems and components with quality craftsmanship."
       },
-      "modern_integration": {
-        "title": "Modern Integration",
-        "description": "Seamless integration of modern amenities and systems while preserving historical integrity."
+      "quality_workmanship": {
+        "title": "Quality Workmanship",
+        "description": "Attention to detail and professional standards in every maintenance task we complete."
       }
     },
     "specialties": {
-      "title": "Restoration",
-      "title_bold": "Specialties",
-      "subtitle": "Comprehensive restoration solutions for historic properties",
+      "title": "Maintenance",
+      "title_bold": "Services",
+      "subtitle": "Comprehensive maintenance solutions for all property types",
       "services": {
-        "historic_preservation": {
-          "title": "Historic Preservation",
-          "description": "Careful preservation of historic buildings while maintaining their original character and significance.",
-          "features": ["Period Accuracy", "Heritage Compliance", "Cultural Significance"]
+        "property_inspection": {
+          "title": "Property Inspection",
+          "description": "Comprehensive property inspections to assess condition and identify maintenance needs.",
+          "features": ["HVAC Assessment", "Plumbing Inspection", "Electrical Check"]
         },
-        "stone_restoration": {
-          "title": "Stone Restoration",
-          "description": "Expert restoration of traditional stone masonry and architectural stonework.",
-          "features": ["Stone Masonry", "Architectural Details", "Weather Protection"]
+        "exterior_maintenance": {
+          "title": "Exterior Maintenance",
+          "description": "Complete care for exterior surfaces, landscaping, and outdoor structures.",
+          "features": ["Exterior Cleaning", "Gutter Maintenance", "Landscaping Care"]
         },
-        "wood_restoration": {
-          "title": "Wood Restoration",
-          "description": "Restoration of historic wooden elements including beams, doors, and decorative features.",
-          "features": ["Wooden Beams", "Historic Doors", "Decorative Elements"]
+        "interior_maintenance": {
+          "title": "Interior Maintenance",
+          "description": "Professional care for interior systems, fixtures, and finishes to maintain property value.",
+          "features": ["Paint Touch-ups", "Fixture Repairs", "Floor Care"]
         },
-        "roof_restoration": {
-          "title": "Roof Restoration",
-          "description": "Restoration of traditional roofing systems using authentic materials and techniques.",
-          "features": ["Traditional Tiles", "Structural Integrity", "Weatherproofing"]
+        "repairs": {
+          "title": "Repairs & Fixes",
+          "description": "Professional repair services for property systems, fixtures, and structural elements.",
+          "features": ["Plumbing Repairs", "Electrical Fixes", "Structural Repairs"]
         },
-        "interior_restoration": {
-          "title": "Interior Restoration",
-          "description": "Restoration of historic interior features including plasterwork, moldings, and fixtures.",
-          "features": ["Plasterwork", "Historic Moldings", "Period Fixtures"]
-        },
-        "modern_integration_service": {
-          "title": "Modern Integration",
-          "description": "Integration of modern systems and amenities while preserving historical authenticity.",
-          "features": ["Modern Plumbing", "Electrical Systems", "Climate Control"]
+        "maintenance_work": {
+          "title": "Maintenance Work",
+          "description": "Complete maintenance tasks including cleaning, servicing, and property care.",
+          "features": ["System Servicing", "Cleaning Services", "Property Care"]
         }
       }
     },
     "process": {
-      "title": "Restoration",
+      "title": "Maintenance",
       "title_bold": "Process",
-      "subtitle": "A careful and methodical approach to historic restoration",
+      "subtitle": "A systematic approach to property maintenance",
       "steps": {
-        "historical_assessment": {
+        "property_assessment": {
           "step": "01",
-          "title": "Historical Assessment",
-          "description": "Comprehensive historical research and assessment of the property's significance and condition."
+          "title": "Property Assessment",
+          "description": "Comprehensive inspection and assessment of your property's condition and maintenance needs."
         },
-        "conservation_planning": {
+        "work_planning": {
           "step": "02",
-          "title": "Conservation Planning",
-          "description": "Development of conservation plans that balance preservation with modern functionality."
+          "title": "Work Planning",
+          "description": "Development of maintenance plan and scope of work based on assessment findings."
         },
-        "authentic_restoration": {
+        "maintenance_work": {
           "step": "03",
-          "title": "Authentic Restoration",
-          "description": "Careful restoration using traditional techniques and authentic materials."
+          "title": "Maintenance Work",
+          "description": "Professional execution of maintenance tasks, repairs, and property care."
         },
-        "modern_integration_step": {
+        "completion": {
           "step": "04",
-          "title": "Modern Integration",
-          "description": "Integration of modern systems while preserving historical authenticity and character."
+          "title": "Completion & Report",
+          "description": "Final inspection, completion report, and handover of completed maintenance work."
         }
       }
     },
     "cta": {
-      "title": "Ready to Restore History?",
-      "subtitle": "Let's discuss your restoration project and preserve Cyprus's architectural heritage",
-      "button": "Start Your Restoration"
+      "title": "Ready to Protect Your Property?",
+      "subtitle": "Let's discuss your maintenance needs and keep your property in perfect condition",
+      "button": "Start Maintenance Service"
     }
   },
       "contact": {

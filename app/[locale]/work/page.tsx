@@ -44,6 +44,16 @@ export default function OurWorkPage() {
         location: t('commercial_complex.location'),
         type: t('commercial_complex.type')
       }
+    } else if (project.id === 'office-renovation-2025') {
+      return {
+        ...project,
+        title: t('office_renovation_2025.title'),
+        subtitle: t('office_renovation_2025.subtitle'),
+        description: t('office_renovation_2025.description'),
+        features: t.raw('office_renovation_2025.features') as string[],
+        location: t('office_renovation_2025.location'),
+        type: t('office_renovation_2025.type')
+      }
     }
     return project
   })
@@ -238,24 +248,24 @@ export default function OurWorkPage() {
           >
             {[
               { 
-                number: "150+", 
-                label: t('projects_completed'), 
-                description: locale === 'el' ? "Ολοκληρωμένα έργα σε όλη την Κύπρο" : "Successfully delivered projects across Cyprus"
+                number: "50+", 
+                label: t('large_scale_projects'), 
+                description: locale === 'el' ? "Σημαντικά κατασκευαστικά έργα ολοκληρώθηκαν" : "Significant construction projects completed"
               },
               { 
-                number: "20+", 
+                number: "18+", 
                 label: t('years_experience'), 
-                description: locale === 'el' ? "Δύο δεκαετίες κατασκευαστικής αριστείας" : "Two decades of construction excellence"
+                description: locale === 'el' ? "Χρόνια εμπειρίας στην κατασκευή" : "Years of construction experience"
               },
               { 
                 number: "100%", 
-                label: t('client_satisfaction'), 
-                description: locale === 'el' ? "Κάθε πελάτης ικανοποιημένος με την εργασία μας" : "Every client satisfied with our work"
+                label: t('quality_guarantee'), 
+                description: locale === 'el' ? "Δέσμευση για αριστεία σε κάθε έργο" : "Commitment to excellence in every project"
               },
               { 
-                number: "50+", 
-                label: t('team_members'), 
-                description: locale === 'el' ? "Έμπειροι ειδικοί στην ομάδα μας" : "Skilled professionals in our team"
+                number: "200+", 
+                label: t('happy_clients'), 
+                description: locale === 'el' ? "Ικανοποιημένοι πελάτες σε όλη την Κύπρο" : "Satisfied clients across Cyprus"
               }
             ].map((stat, index) => (
               <motion.div

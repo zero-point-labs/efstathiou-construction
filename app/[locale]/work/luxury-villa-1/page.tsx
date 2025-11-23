@@ -37,9 +37,7 @@ export default function LuxuryVillaProjectPage() {
       '/Our-Work-Content/Resitental-Prop-Renew-img3.JPG'
     ],
     specifications: {
-      area: t('specifications.area'),
-      duration: t('specifications.duration'),
-      budget: t('specifications.budget')
+      duration: t('specifications.duration')
     },
     features: t.raw('features') as string[],
     description: Array.isArray(descriptionArray) ? descriptionArray.join(' ') : descriptionArray,
@@ -48,7 +46,6 @@ export default function LuxuryVillaProjectPage() {
     solutions: tCommon.raw('luxury_villa_solutions') as string[],
     testimonial: {
       text: tCommon('testimonial_luxury_villa'),
-      author: 'Maria & Andreas Christou',
       role: tCommon('property_owners')
     }
   }
@@ -189,7 +186,7 @@ export default function LuxuryVillaProjectPage() {
 
           {/* Project Specifications */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 md:mb-20"
+            className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-16 md:mb-20 max-w-md mx-auto"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -212,44 +209,44 @@ export default function LuxuryVillaProjectPage() {
 
           {/* Project Features */}
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 md:mb-20"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 md:mb-20"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="lg:pr-8">
               <h3 className={`text-2xl md:text-3xl font-semibold text-gray-900 mb-6 ${locale === 'el' ? 'greek-text' : ''}`}>{tCommon('key_features')}</h3>
               <div className="space-y-4">
                 {project.features.map((feature: string, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-gray-900 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className={`text-gray-600 leading-relaxed ${locale === 'el' ? 'greek-text' : ''}`}>{feature}</p>
+                    <p className={`text-gray-600 leading-relaxed text-base ${locale === 'el' ? 'greek-text' : ''}`}>{feature}</p>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="lg:pl-8 lg:border-l lg:border-gray-200">
               <h3 className={`text-2xl md:text-3xl font-semibold text-gray-900 mb-6 ${locale === 'el' ? 'greek-text' : ''}`}>{tCommon('challenges_and_solutions')}</h3>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <h4 className={`text-lg font-semibold text-gray-900 mb-3 ${locale === 'el' ? 'greek-text' : ''}`}>{tCommon('challenges')}</h4>
-                  <div className="space-y-2">
+                  <h4 className={`text-xl font-semibold text-gray-900 mb-4 ${locale === 'el' ? 'greek-text' : ''}`}>{tCommon('challenges')}</h4>
+                  <div className="space-y-3">
                     {project.challenges.map((challenge: string, index: number) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className={`text-gray-600 text-sm leading-relaxed ${locale === 'el' ? 'greek-text' : ''}`}>{challenge}</p>
+                        <p className={`text-gray-600 text-base leading-relaxed ${locale === 'el' ? 'greek-text' : ''}`}>{challenge}</p>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h4 className={`text-lg font-semibold text-gray-900 mb-3 ${locale === 'el' ? 'greek-text' : ''}`}>{tCommon('solutions')}</h4>
-                  <div className="space-y-2">
+                  <h4 className={`text-xl font-semibold text-gray-900 mb-4 ${locale === 'el' ? 'greek-text' : ''}`}>{tCommon('solutions')}</h4>
+                  <div className="space-y-3">
                     {project.solutions.map((solution: string, index: number) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className={`text-gray-600 text-sm leading-relaxed ${locale === 'el' ? 'greek-text' : ''}`}>{solution}</p>
+                        <p className={`text-gray-600 text-base leading-relaxed ${locale === 'el' ? 'greek-text' : ''}`}>{solution}</p>
                       </div>
                     ))}
                   </div>
@@ -317,23 +314,11 @@ export default function LuxuryVillaProjectPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="text-6xl text-gray-200 mb-8">&ldquo;</div>
-            <blockquote className={`text-xl md:text-2xl lg:text-3xl text-gray-900 font-light leading-relaxed mb-8 ${locale === 'el' ? 'greek-text' : ''}`}>
+            <blockquote className={`text-xl md:text-2xl lg:text-3xl text-gray-900 font-light leading-relaxed mb-6 ${locale === 'el' ? 'greek-text' : ''}`}>
               {project.testimonial.text}
             </blockquote>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">
-                  {project.testimonial.author.charAt(0)}
-                </span>
-              </div>
-              <div className="text-left">
-                <div className="text-gray-900 font-semibold text-lg">
-                  {project.testimonial.author}
-                </div>
-                <div className={`text-gray-600 text-sm ${locale === 'el' ? 'greek-text' : ''}`}>
-                  {project.testimonial.role}
-                </div>
-              </div>
+            <div className={`text-gray-500 text-sm md:text-base font-medium tracking-wide uppercase ${locale === 'el' ? 'greek-text' : ''}`}>
+              {project.testimonial.role}
             </div>
           </motion.div>
         </div>
