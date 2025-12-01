@@ -166,7 +166,7 @@ export default function ContactFormPopup({ isOpen, onClose }: ContactFormPopupPr
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00343d] focus:border-transparent transition-colors duration-200"
-                  placeholder="Enter your phone number"
+                  placeholder="99614395"
                 />
               </div>
 

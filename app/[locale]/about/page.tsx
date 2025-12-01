@@ -283,7 +283,7 @@ export default function AboutPage() {
               { number: "50+", label: t('stats.large_scale_projects') },
               { number: "18+", label: t('stats.years_experience') },
               { number: "100%", label: t('stats.quality_guarantee') },
-              { number: "200+", label: t('stats.happy_clients') }
+              { number: "1000+", label: t('stats.happy_clients') }
             ].map((stat, index) => (
               <motion.div
                 key={index}

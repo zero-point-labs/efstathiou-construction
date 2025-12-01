@@ -79,7 +79,7 @@ export default function Header({ isDark = false }: HeaderProps) {
         {/* Logo */}
         <Link href={`/${locale}`}>
           <motion.div 
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer ml-8 md:ml-16 lg:ml-24"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
@@ -95,7 +95,7 @@ export default function Header({ isDark = false }: HeaderProps) {
         </Link>
         
         {/* Desktop Navigation */}
-        <div className={`hidden md:flex space-x-8 lg:space-x-12 text-sm lg:text-base font-medium greek-text ${
+        <div className={`hidden md:flex items-center space-x-8 lg:space-x-12 text-sm lg:text-base font-medium greek-text ${
           shouldUseDarkTheme && scrollY < 100 ? 'text-white' : 'text-gray-900'
         }`}>
           <Link href={`/${locale}`}>
@@ -158,17 +158,16 @@ export default function Header({ isDark = false }: HeaderProps) {
               {t('services')}
             </motion.a>
           </Link>
-        </div>
-        
-        {/* Desktop Language Switcher */}
-        <div className="hidden md:flex items-center">
-          <LanguageSwitcher isDark={shouldUseDarkTheme && scrollY < 100} />
+          {/* Language Switcher */}
+          <div className="ml-2">
+            <LanguageSwitcher isDark={shouldUseDarkTheme && scrollY < 100} />
+          </div>
         </div>
         
         {/* Desktop Contact Button */}
         <Link href={`/${locale}/contact`}>
           <motion.button 
-            className={`hidden md:block text-xs lg:text-sm font-medium tracking-wider border px-3 lg:px-4 py-2 transition-all duration-300 ${
+            className={`hidden md:block text-xs lg:text-sm font-medium tracking-wider border px-3 lg:px-4 py-2 transition-all duration-300 mr-8 md:mr-16 lg:mr-24 ${
               shouldUseDarkTheme && scrollY < 100
                 ? 'text-white border-white/40 hover:bg-white hover:text-black'
                 : 'text-gray-900 border-gray-900/40 hover:bg-gray-900 hover:text-white'
@@ -343,24 +342,21 @@ export default function Header({ isDark = false }: HeaderProps) {
                       )}
                     </motion.div>
                   </Link>
-                )})}
-              </nav>
-
-              {/* Language Switcher */}
-              <motion.div
-                className="mt-6 px-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: mobileMenuOpen ? 1 : 0,
-                  y: mobileMenuOpen ? 0 : 20
-                }}
-                transition={{ delay: 0.4, duration: 0.3 }}
-              >
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wider">Language</p>
+                )                })}
+                
+                {/* Language Switcher for Mobile */}
+                <motion.div
+                  className="flex items-center justify-center px-4 py-4 mt-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: mobileMenuOpen ? 1 : 0,
+                    y: mobileMenuOpen ? 0 : 20
+                  }}
+                  transition={{ delay: 0.4, duration: 0.3 }}
+                >
                   <LanguageSwitcher isDark={false} />
-                </div>
-              </motion.div>
+                </motion.div>
+              </nav>
             </div>
 
             {/* Menu Footer */}

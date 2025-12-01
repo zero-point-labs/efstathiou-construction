@@ -159,7 +159,7 @@
         "The scope of work encompassed detailed cleaning, repainting, and repair of exterior surfaces, along with upgrading the garden and landscape design. We also implemented modern outdoor lighting solutions and conducted thorough structural integrity checks to address any minor repairs. The goal was to blend contemporary design principles with practical maintenance, delivering a refreshed and sustainable living environment."
       ],
       "features": ["Exterior Maintenance", "Aesthetic Enhancement", "Garden Care"],
-      "location": "Limassol, Cyprus",
+      "location": "Latsia, Cyprus",
       "type": "Residential"
     },
     "commercial_complex": {
@@ -795,7 +795,7 @@
         "location": "Nicosia, Cyprus",
         "location_note": "Available for projects island-wide",
         "phone": "Phone",
-        "phone_number": "+357 XX XXX XXX",
+        "phone_number": "99614395",
         "phone_hours": "Mon - Fri, 9:00 AM - 6:00 PM",
         "email": "Email",
         "email_address": "info@efstathiou-constructions.com",
@@ -814,7 +814,7 @@
         "placeholders": {
           "full_name": "Your full name",
           "email": "your@email.com",
-          "phone": "+357 XX XXX XXX",
+          "phone": "99614395",
           "location": "City, Cyprus",
           "project_type": "Select project type",
           "budget": "Select budget range",
@@ -861,7 +861,7 @@
         "contact": "CONTACT",
         "contact_bold": "CONTACT",
         "location": "Nicosia, Cyprus",
-        "phone": "+357 XX XXX XXX",
+        "phone": "99614395",
         "email": "info@efstathiou-constructions.com",
         "copyright": "© 2024 Nicolas Efstathiou Constructions Ltd. All rights reserved."
       }

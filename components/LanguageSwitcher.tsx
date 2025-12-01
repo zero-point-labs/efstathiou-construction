@@ -39,36 +39,40 @@ export default function LanguageSwitcher({ isDark = false }: LanguageSwitcherPro
     router.push(newPath);
   };
 
-  const textColor = isDark ? 'text-white' : 'text-gray-900';
-  const inactiveColor = isDark ? 'text-white/70' : 'text-gray-600';
-  const borderColor = isDark ? 'border-white' : 'border-gray-900';
-  const hoverBorderColor = isDark ? 'border-white/50' : 'border-gray-600';
-  const separatorColor = isDark ? 'text-white/50' : 'text-gray-400';
-
   return (
     <div className="flex items-center space-x-2">
       <motion.button
         onClick={() => changeLanguage('en')}
-        className={`text-sm font-medium tracking-wide transition-colors ${
+        className={`text-sm font-medium tracking-wide transition-colors pb-1 ${
           currentLocale === 'en' 
-            ? `${textColor} border-b-2 ${borderColor}` 
-            : `${inactiveColor} hover:${textColor} hover:border-b-2 hover:${hoverBorderColor}`
+            ? isDark 
+              ? 'text-white border-b-2 border-white' 
+              : 'text-gray-900 border-b-2 border-gray-900'
+            : isDark
+              ? 'text-white/70 hover:text-white hover:border-b-2 hover:border-white/50'
+              : 'text-gray-600 hover:text-gray-900 hover:border-b-2 hover:border-gray-600'
         }`}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
       >
         EN
       </motion.button>
-      <span className={separatorColor}>|</span>
+      <span className={isDark ? 'text-white/50' : 'text-gray-400'}>|</span>
       <motion.button
         onClick={() => changeLanguage('el')}
-        className={`text-sm font-medium tracking-wide transition-colors ${
+        className={`text-sm font-medium tracking-wide transition-colors pb-1 ${
           currentLocale === 'el' 
-            ? `${textColor} border-b-2 ${borderColor}` 
-            : `${inactiveColor} hover:${textColor} hover:border-b-2 hover:${hoverBorderColor}`
+            ? isDark 
+              ? 'text-white border-b-2 border-white' 
+              : 'text-gray-900 border-b-2 border-gray-900'
+            : isDark
+              ? 'text-white/70 hover:text-white hover:border-b-2 hover:border-white/50'
+              : 'text-gray-600 hover:text-gray-900 hover:border-b-2 hover:border-gray-600'
         }`}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
       >
         ΕΛ
       </motion.button>

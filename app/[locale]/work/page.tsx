@@ -263,9 +263,9 @@ export default function OurWorkPage() {
                 description: locale === 'el' ? "Δέσμευση για αριστεία σε κάθε έργο" : "Commitment to excellence in every project"
               },
               { 
-                number: "200+", 
+                number: "1000+", 
                 label: t('happy_clients'), 
-                description: locale === 'el' ? "Ικανοποιημένοι πελάτες σε όλη την Κύπρο" : "Satisfied clients across Cyprus"
+                description: locale === 'el' ? "Περισσότεροι από 1000 ικανοποιημένοι πελάτες" : "More than 1K happy clients"
               }
             ].map((stat, index) => (
               <motion.div

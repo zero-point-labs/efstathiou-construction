@@ -320,7 +320,7 @@ export default function AboutSection() {
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.6, delay: 1.7 }}
                 >
-                  200+
+                  1000+
                 </motion.div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{t('happy_clients')}</div>
               </motion.div>
